@@ -84,6 +84,84 @@
 		<hr id="properties" />
 	</div>
 </section>
+<section class="properties" data-color="white">
+  <div class="container">
+    <div class="properties-grid">
+      <div class="item">
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <img
+          on:click={() => onClickImg("/images/3 Lewis St, Lynn.webp")}
+          class="card-img expand"
+          src="/images/3 Lewis St, Lynn.webp"
+          alt="outside of the house"
+        />
+        <span class="inner-text">Lewis St, Lynn, MA</span>
+      </div>
+      <div class="item">
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <img
+          on:click={() =>
+            onClickImg("/images/12 Mt. Vernon St, Salem.webp")}
+          class="card-img expand"
+          src="/images/12 Mt. Vernon St, Salem.webp"
+          alt="outside of the house"
+        />
+        <span class="inner-text">Mt. Vernon St, Salem, MA</span>
+      </div>
+      <div class="item">
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <img
+          on:click={() => onClickImg("/images/16 Hovey Terrace, Lynn.webp")}
+          class="card-img expand"
+          src="/images/16 Hovey Terrace, Lynn.webp"
+          alt="outside of the house"
+        />
+        <span class="inner-text">Hovey Terrace, Lynn, MA</span>
+      </div>
+      <div class="item">
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <img
+          on:click={() =>
+            onClickImg("/images/18 Maplewood St, Malden.webp")}
+          class="card-img expand"
+          src="/images/18 Maplewood St, Malden.webp"
+          alt="outside of the house"
+        />
+        <span class="inner-text">Maplewood St, Malden, MA</span>
+      </div>
+      <div class="item">
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <img
+          on:click={() => onClickImg("/images/19 Hanover St, Lynn.webp")}
+          class="card-img expand"
+          src="/images/19 Hanover St, Lynn.webp"
+          alt="outside of the house"
+        />
+        <span class="inner-text expand">Hanover St, Lynn, MA</span>
+      </div>
+      <div class="item">
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <img
+          on:click={() => onClickImg("/images/20 Harwood St, Lynn.webp")}
+          class="card-img expand"
+          src="/images/20 Harwood St, Lynn.webp"
+          alt="outside of the house"
+        />
+        <span class="inner-text expand">Harwood St, Lynn, MA</span>
+      </div>
+      <div class="item">
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <img
+          on:click={() => onClickImg("/images/61 Breed St, Lynn.webp")}
+          class="card-img expand"
+          src="/images/61 Breed St, Lynn.webp"
+          alt="outside of the house"
+        />
+        <span class="inner-text expand">Breed St, Lynn, MA</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <style>
 
@@ -302,6 +380,65 @@ p {
     color: #151515;
     font-size: 52px;
 
+}
+
+.properties-grid {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.item {
+  flex-basis: 25%;
+  transition: all 0.6s ease;
+  padding: 1rem;
+}
+
+.expand {
+  transition: all 0.5s ease;
+}
+
+.expand:hover {
+  transform: scale(1.03);
+  cursor: pointer;
+}
+
+.expand:hover .inner-text {
+  margin-top: 2rem !important;
+}
+
+.inner-text {
+  margin-top: 1rem;
+  /* padding-left: 2rem; */
+  min-width: 600px;
+  font-family: "Questrial", sans-serif;
+  opacity: 1;
+  transform-origin: 527.844px 50.0703px;
+  transform: translate(0px, 0%);
+  color: #151515;
+  font-size: 24px;
+  transition: all 0.6s ease;
+}
+
+@media only screen and (max-width: 850px) {
+  .inner-text {
+    /* padding-left: 0.01rem; */
+    font-size: 12px;
+  }
+}
+
+
+.card-img {
+  margin-bottom: 0.5rem;
+  height: 100%;
+  width: 100%;
+  border-radius: 11px;
 }
 
 

@@ -1,18 +1,16 @@
-<script>
-	import Header from './Header.svelte';
-	import '../app.css';
-</script>
+<script>import Header from './Header.svelte';
+import '../app.css';</script>
 
 <div class="app">
-	<Header />
+	<Header></Header>
 
 	<main>
-		<slot />
+		<slot></slot>
 	</main>
 
 	<div class="footer-wrapper">
 		<footer id="colophon" class="site-footer">
-			<div class="top" />
+			<div class="top"></div>
 			<hr />
 			<div class="left-right">
 				<div class="left text-footer-links">
@@ -21,24 +19,16 @@
 						<div class="wp-widget-group__inner-blocks">
 							<ul>
 								<li>
-									<a href="#" target="_blank" rel="noreferrer noopener"
-										>Instagram</a
-									>
+									<a href="#" target="_blank" rel="noreferrer noopener">Instagram</a>
 								</li>
 								<li>
-									<a href="#" target="_blank" rel="noreferrer noopener"
-										>Twitter</a
-									>
+									<a href="#" target="_blank" rel="noreferrer noopener">Twitter</a>
 								</li>
 								<li>
-									<a href="#" target="_blank" rel="noreferrer noopener"
-										>LinkedIn</a
-									>
+									<a href="#" target="_blank" rel="noreferrer noopener">LinkedIn</a>
 								</li>
 								<li>
-									<a href="#" target="_blank" rel="noreferrer noopener"
-										>Facebook</a
-									>
+									<a href="#" target="_blank" rel="noreferrer noopener">Facebook</a>
 								</li>
 							</ul>
 						</div>
@@ -60,14 +50,9 @@
 					<div id="block-9" class="menu widget_block">
 						<div class="menu-title">Telephone Number</div>
 						<div class="wp-widget-group__inner-blocks">
-							<a href="tel:+1(781)-924-9442" class="text-footer-links"
-								>781-924-9442</a
-							>
+							<a href="tel:+1(781)-924-9442" class="text-footer-links">781-924-9442</a>
 							<br />
-							<a
-								href="mailto: HarwoodHouses@gmail.com"
-								style="color: #151515"
-							>
+							<a href="mailto: HarwoodHouses@gmail.com" style="color: #151515">
 								Email
 							</a>
 						</div>
@@ -77,6 +62,7 @@
 		</footer>
 	</div>
 </div>
+
 
 <style>
 	.app {

@@ -69,8 +69,6 @@
 		<a href="/apply" id="pdfButton" class="cta-button">APPLY NOW!</a>
 	</div>
 </section>
-
-
 <style>
 	@import url("https://fonts.googleapis.com/css2?family=Ewert&family=Questrial&family=Rammetto+One&family=Zen+Tokyo+Zoo&display=swap");
 
