@@ -1,6 +1,31 @@
 
 <script>
-  const rawHtml = ``
+  import axios from "axios";
+  const rawHtml = ``;
+  let firstName = ``;
+  let lastName = ``;
+  let telephoneNumber = ``;
+  let email = ``;
+  let message = ``;
+ 
+
+  const onSubmit =async () =>{
+    const formData = new FormData();
+    formData.append("firstName",firstName);
+    console.log(firstName);
+    formData.append("lastName",lastName);
+    formData.append("telephoneNumber",telephoneNumber);
+    formData.append("email",email);
+    formData.append("message",message); 
+    const res = await axios({
+  method: "post",
+  url: "/api/mail",
+  data: formData,
+  headers: { "Content-Type": "multipart/form-data" },
+});
+    
+console.log(await res.json());
+  };
 </script>
 
 <div class="container">
@@ -8,29 +33,35 @@
   <div class="rowWrapper column">
     <div class="columnLeft"><h2 class="columnLeftH2">Start Your Journey with Harwood Houses</h2><p class="mktP">
       Harwood Houses provides supportive sober living environments tailored for recovery. Apply below to secure a place in our top-rated sober houses and begin your journey to a healthier lifestyle.
-  </p><div class="theForm"><div class="formWrapper"><form class="mktForm"><div class="mktFormRow"><div class="mktFormCol"><div class="mktFieldWrap"><input
+  </p><div class="theForm"><div class="formWrapper"><form class="mktForm"><div class="mktFormRow"><div class="mktFormCol"><div class="mktFieldWrap">
+        <input
                 name="firstName"
                 placeholder="First Name"
                 class="mktInputText"
-              /></div></div><div class="mktFormCol"><div class="mktFieldWrap">
+                bind:value={firstName}
+                /></div></div><div class="mktFormCol"><div class="mktFieldWrap">
                 <input
                 name="lastName"
                 placeholder="Last Name"
                 class="mktInputText"
+                bind:value={lastName}
               /></div></div></div><div class="mktFormRow"><div class="mktFormCol"><div class="mktFieldWrap"><input
                 type="number"
                 name="telephoneNumber"
                 placeholder="Phone Number"
                 class="mktInputText"
+                bind:value={telephoneNumber}
               /></div></div><div class="mktFormCol"><div class="mktFieldWrap"><input
                 name="email"
                 placeholder="Email"
                 class="mktInputText"
+                bind:value={email}
               /></div></div></div><div class="mktFormRowSingle"><div class="mktFormCol"><div class="mktFieldWrap"><textarea
                 name="message"
                 placeholder="Message"
                 class="mktInputTextArea"
-              ></textarea></div></div></div><div class="mktButtonRow"><span class="mktButtonSpan"><button type="submit" class="mktButton">Submit</button></span></div></form>
+                bind:value={message}
+              ></textarea></div></div></div><div class="mktButtonRow"><span class="mktButtonSpan"><button on:click={onSubmit} type="submit" class="mktButton">Submit</button></span></div></form>
             </div>
           </div>
         </div>
