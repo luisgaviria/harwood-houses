@@ -1,13 +1,146 @@
 <script>
-	import Counter from './Counter.svelte';
 	import bannerImage from '$lib/images/HarwoodHousesLogo.webp';
 	import welcome_fallback from '$lib/images/svelte-welcome.png';
+  import Modal from "../components/Modal.svelte";
+  import { Splide, SplideSlide } from '@splidejs/svelte-splide';
+  import '@splidejs/svelte-splide/css';
+
+  let showModal = {
+    lewis: false,
+    vernon: false,
+    hovey: false,
+    mapplewood: false,
+    hanover: false,
+    harwood: false,
+    breed: false
+  }
+
+  const onClickImg = (city) =>{
+    showModal = {...showModal, [city]: !showModal.city };
+  };
+
 </script>
 
 <svelte:head>
 	<title>Home</title>
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
+
+<Modal bind:showModal={showModal.lewis}>
+  <Splide aria-label="Carousel Lewis">
+    <SplideSlide>
+      <img src="/images/LEWIS-7.webp" width="1500px" height="700px" alt="Image 1"/>
+    </SplideSlide>
+    <SplideSlide>
+      <img src="/images/LEWIS-8.webp" width="1500px" height="700px" alt="Image 2"/>
+    </SplideSlide>
+    <SplideSlide>
+      <img src="/images/LEWIS-9.webp" width="1500px" height="700px" alt="Image 3"/>
+    </SplideSlide>
+    <SplideSlide>
+      <img src="/images/LEWIS-10.webp" width="1500px" height="700px" alt="Image 4"/>
+    </SplideSlide>
+    <SplideSlide>
+      <img src="/images/LEWIS-11.webp" width="1500px" height="700px" alt="Image 5"/>
+    </SplideSlide>
+    <SplideSlide>
+      <img src="/images/LEWIS-12.webp" width="1500px" height="700px" alt="Image 6"/>
+    </SplideSlide>
+    <SplideSlide>
+      <img src="/images/LEWIS-13.jpg" width="1500px" height="700px" alt="Image 7"/>
+    </SplideSlide>
+  </Splide> 
+</Modal>
+
+<Modal bind:showModal={showModal.vernon}>
+  <img src="/images/12 Mt. Vernon St, Salem.webp" >
+</Modal>
+
+<Modal bind:showModal={showModal.hovey}>
+  <img src="/images/16 Hovey Terrace, Lynn.webp"/>
+</Modal>
+
+<Modal bind:showModal={showModal.mapplewood}>
+  <img src="/images/18 Maplewood St, Malden.webp"/>
+</Modal>
+
+<Modal bind:showModal={showModal.hanover}>
+  <Splide aria-label="Carousel Hanover">
+    <SplideSlide>
+      <img src="/images/HANOVER-1.webp" width="1500px" height="700px" alt="Image 1"/>
+    </SplideSlide>
+    <SplideSlide>
+      <img src="/images/HANOVER-2.webp" width="1500px" height="700px" alt="Image 2"/>
+    </SplideSlide>
+    <SplideSlide>
+      <img src="/images/HANOVER-3.webp" width="1500px" height="700px" alt="Image 3"/>
+    </SplideSlide>
+    <SplideSlide>
+      <img src="/images/HANOVER-4.webp" width="1500px" height="700px" alt="Image 4"/>
+    </SplideSlide>
+    <SplideSlide>
+      <img src="/images/HANOVER-5.webp" width="1500px" height="700px" alt="Image 5"/>
+    </SplideSlide>
+    <SplideSlide>
+      <img src="/images/HANOVER-6.webp" width="1500px" height="700px" alt="Image 6"/>
+    </SplideSlide>
+    <SplideSlide>
+      <img src="/images/HANOVER-7.webp" width="1500px" height="700px" alt="Image 7"/>
+    </SplideSlide>
+    <SplideSlide>
+      <img src="/images/HANOVER-8.webp" width="1500px" height="700px" alt="Image 8"/>
+    </SplideSlide>
+    <SplideSlide>
+      <img src="/images/HANOVER-9.webp" width="1500px" height="700px" alt="Image 9"/>
+    </SplideSlide>
+    <SplideSlide>
+      <img src="/images/HANOVER-10.webp" width="1500px" height="700px" alt="Image 10"/>
+    </SplideSlide>
+    <SplideSlide>
+      <img src="/images/HANOVER-11.webp" width="1500px" height="700px" alt="Image 11"/>
+    </SplideSlide>
+    <SplideSlide>
+      <img src="/images/HANOVER-12.webp" width="1500px" height="700px" alt="Image 12"/>
+    </SplideSlide>
+    <SplideSlide>
+      <img src="/images/HANOVER-13.webp" width="1500px" height="700px" alt="Image 13"/>
+    </SplideSlide>
+    <SplideSlide>
+      <img src="/images/HANOVER-14.webp" width="1500px" height="700px" alt="Image 14"/>
+    </SplideSlide>
+  </Splide> 
+</Modal>
+
+<Modal bind:showModal={showModal.harwood}>
+  <img src="/images/20 Harwood St, Lynn.webp"/>
+</Modal>
+
+<Modal bind:showModal={showModal.breed}>
+  <Splide aria-label="Carousel Breed">
+    <SplideSlide>
+      <img src="/images/BREED-2.webp" width="1500px" height="700px" alt="Image 1"/>
+    </SplideSlide>
+    <SplideSlide>
+      <img src="/images/BREED-3.webp" width="1500px" height="700px" alt="Image 2"/>
+    </SplideSlide>
+    <SplideSlide>
+      <img src="/images/BREED-4.webp" width="1500px" height="700px" alt="Image 3"/>
+    </SplideSlide>
+    <SplideSlide>
+      <img src="/images/BREED-5.webp" width="1500px" height="700px" alt="Image 4"/>
+    </SplideSlide>
+    <SplideSlide>
+      <img src="/images/BREED-6.webp" width="1500px" height="700px" alt="Image 5"/>
+    </SplideSlide>
+    <SplideSlide>
+      <img src="/images/BREED-7.webp" width="1500px" height="700px" alt="Image 5"/>
+    </SplideSlide>
+    <SplideSlide>
+      <img src="/images/BREED-8.webp" width="1500px" height="700px" alt="Image 5"/>
+    </SplideSlide>
+  </Splide> 
+</Modal>
+
 
 <section class="banner" data-color="white">
 	<div class="container banner-wrapper">
@@ -90,7 +223,7 @@
       <div class="item">
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <img
-          on:click={() => onClickImg("/images/3 Lewis St, Lynn.webp")}
+          on:click={() => onClickImg("lewis")}
           class="card-img expand"
           src="/images/3 Lewis St, Lynn.webp"
           alt="outside of the house"
@@ -101,7 +234,7 @@
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <img
           on:click={() =>
-            onClickImg("/images/12 Mt. Vernon St, Salem.webp")}
+            onClickImg("vernon")}
           class="card-img expand"
           src="/images/12 Mt. Vernon St, Salem.webp"
           alt="outside of the house"
@@ -111,7 +244,7 @@
       <div class="item">
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <img
-          on:click={() => onClickImg("/images/16 Hovey Terrace, Lynn.webp")}
+          on:click={() => onClickImg("hovey")}
           class="card-img expand"
           src="/images/16 Hovey Terrace, Lynn.webp"
           alt="outside of the house"
@@ -122,7 +255,7 @@
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <img
           on:click={() =>
-            onClickImg("/images/18 Maplewood St, Malden.webp")}
+            onClickImg("mapplewood")}
           class="card-img expand"
           src="/images/18 Maplewood St, Malden.webp"
           alt="outside of the house"
@@ -132,7 +265,7 @@
       <div class="item">
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <img
-          on:click={() => onClickImg("/images/19 Hanover St, Lynn.webp")}
+          on:click={() => onClickImg("hanover")}
           class="card-img expand"
           src="/images/19 Hanover St, Lynn.webp"
           alt="outside of the house"
@@ -142,7 +275,7 @@
       <div class="item">
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <img
-          on:click={() => onClickImg("/images/20 Harwood St, Lynn.webp")}
+          on:click={() => onClickImg("harwood")}
           class="card-img expand"
           src="/images/20 Harwood St, Lynn.webp"
           alt="outside of the house"
@@ -152,7 +285,7 @@
       <div class="item">
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <img
-          on:click={() => onClickImg("/images/61 Breed St, Lynn.webp")}
+          on:click={() => onClickImg("breed")}
           class="card-img expand"
           src="/images/61 Breed St, Lynn.webp"
           alt="outside of the house"

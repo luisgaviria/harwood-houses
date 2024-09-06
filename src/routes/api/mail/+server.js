@@ -12,8 +12,16 @@ export const POST = async({request}) => {
         from: 'harwoodwebsite@'+MAILGUN_API_DOMAIN,
         to: [MAIL_TO_EMAILS_1,MAIL_TO_EMAILS,MAIL_TO_EMAILS_2],
         subject: "A new form has been submited",
-        text: "testing mailgun",
-        html: "<h1>A new form has been submitted via Harwoodhouses.com please open the attachment to view the form.</h1>",
+        html: `<h1>A new form has been submitted via Harwoodhouses.com please open the attachment to view the form.</h1>
+            <ul>
+            <li>First Name: ${data.get("firstName")}</li>
+            <li>Last Name: ${data.get("lastName")}</li>
+            <li>Telephone: ${data.get("telephoneNumber")}</li>
+            <li>Email: ${data.get("email")}</li>
+            <li>Message: ${data.get("message")}</li>
+            </ul>
+        
+        `,
     };
 
     await client.messages.create(MAILGUN_API_DOMAIN,email);
