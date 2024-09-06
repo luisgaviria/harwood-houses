@@ -78,6 +78,7 @@
 		padding: 0.2em;
 		width: 2em;
 		height: 2em;
+		font-size: 24px;
 	}
 
 	.close-button svg {
@@ -93,4 +94,9 @@
 	button {
 		display: block;
 	}
+
+.splide__slide img {
+  width: 100%;
+  height: auto;
+}
 </style>

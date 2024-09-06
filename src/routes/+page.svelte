@@ -29,114 +29,114 @@
 <Modal bind:showModal={showModal.lewis}>
   <Splide aria-label="Carousel Lewis">
     <SplideSlide>
-      <img src="/images/LEWIS-7.webp" width="1500px" height="700px" alt="Image 1"/>
+      <img src="/images/LEWIS-7.webp"  alt="Image 1"/>
     </SplideSlide>
     <SplideSlide>
-      <img src="/images/LEWIS-8.webp" width="1500px" height="700px" alt="Image 2"/>
+      <img src="/images/LEWIS-8.webp" alt="Image 2"/>
     </SplideSlide>
     <SplideSlide>
-      <img src="/images/LEWIS-9.webp" width="1500px" height="700px" alt="Image 3"/>
+      <img src="/images/LEWIS-9.webp"  alt="Image 3"/>
     </SplideSlide>
     <SplideSlide>
-      <img src="/images/LEWIS-10.webp" width="1500px" height="700px" alt="Image 4"/>
+      <img src="/images/LEWIS-10.webp"  alt="Image 4"/>
     </SplideSlide>
     <SplideSlide>
-      <img src="/images/LEWIS-11.webp" width="1500px" height="700px" alt="Image 5"/>
+      <img src="/images/LEWIS-11.webp"  alt="Image 5"/>
     </SplideSlide>
     <SplideSlide>
-      <img src="/images/LEWIS-12.webp" width="1500px" height="700px" alt="Image 6"/>
+      <img src="/images/LEWIS-12.webp" alt="Image 6"/>
     </SplideSlide>
     <SplideSlide>
-      <img src="/images/LEWIS-13.jpg" width="1500px" height="700px" alt="Image 7"/>
+      <img src="/images/LEWIS-13.jpg" alt="Image 7"/>
     </SplideSlide>
   </Splide> 
 </Modal>
 
 <Modal bind:showModal={showModal.vernon}>
-  <img src="/images/12 Mt. Vernon St, Salem.webp" >
+  <img class="single-overlay" src="/images/12 Mt. Vernon St, Salem.webp" >
 </Modal>
 
 <Modal bind:showModal={showModal.hovey}>
-  <img src="/images/16 Hovey Terrace, Lynn.webp"/>
+  <img class="single-overlay" src="/images/16 Hovey Terrace, Lynn.webp"/>
 </Modal>
 
 <Modal bind:showModal={showModal.mapplewood}>
-  <img src="/images/18 Maplewood St, Malden.webp"/>
+  <img class="single-overlay" src="/images/18 Maplewood St, Malden.webp"/>
 </Modal>
 
 <Modal bind:showModal={showModal.hanover}>
-  <Splide aria-label="Carousel Hanover">
+  <Splide id="image-carousel" aria-label="Carousel Hanover">
     <SplideSlide>
-      <img src="/images/HANOVER-1.webp" width="1500px" height="700px" alt="Image 1"/>
+      <img src="/images/HANOVER-1.webp"  alt="Image 1"/>
     </SplideSlide>
     <SplideSlide>
-      <img src="/images/HANOVER-2.webp" width="1500px" height="700px" alt="Image 2"/>
+      <img src="/images/HANOVER-2.webp"  alt="Image 2"/>
     </SplideSlide>
     <SplideSlide>
-      <img src="/images/HANOVER-3.webp" width="1500px" height="700px" alt="Image 3"/>
+      <img src="/images/HANOVER-3.webp"  alt="Image 3"/>
     </SplideSlide>
     <SplideSlide>
-      <img src="/images/HANOVER-4.webp" width="1500px" height="700px" alt="Image 4"/>
+      <img src="/images/HANOVER-4.webp"  alt="Image 4"/>
     </SplideSlide>
     <SplideSlide>
-      <img src="/images/HANOVER-5.webp" width="1500px" height="700px" alt="Image 5"/>
+      <img src="/images/HANOVER-5.webp"  alt="Image 5"/>
     </SplideSlide>
     <SplideSlide>
-      <img src="/images/HANOVER-6.webp" width="1500px" height="700px" alt="Image 6"/>
+      <img src="/images/HANOVER-6.webp"  alt="Image 6"/>
     </SplideSlide>
     <SplideSlide>
-      <img src="/images/HANOVER-7.webp" width="1500px" height="700px" alt="Image 7"/>
+      <img src="/images/HANOVER-7.webp"  alt="Image 7"/>
     </SplideSlide>
     <SplideSlide>
-      <img src="/images/HANOVER-8.webp" width="1500px" height="700px" alt="Image 8"/>
+      <img src="/images/HANOVER-8.webp"  alt="Image 8"/>
     </SplideSlide>
     <SplideSlide>
-      <img src="/images/HANOVER-9.webp" width="1500px" height="700px" alt="Image 9"/>
+      <img src="/images/HANOVER-9.webp"  alt="Image 9"/>
     </SplideSlide>
     <SplideSlide>
-      <img src="/images/HANOVER-10.webp" width="1500px" height="700px" alt="Image 10"/>
+      <img src="/images/HANOVER-10.webp"  alt="Image 10"/>
     </SplideSlide>
     <SplideSlide>
-      <img src="/images/HANOVER-11.webp" width="1500px" height="700px" alt="Image 11"/>
+      <img src="/images/HANOVER-11.webp"  alt="Image 11"/>
     </SplideSlide>
     <SplideSlide>
-      <img src="/images/HANOVER-12.webp" width="1500px" height="700px" alt="Image 12"/>
+      <img src="/images/HANOVER-12.webp"  alt="Image 12"/>
     </SplideSlide>
     <SplideSlide>
-      <img src="/images/HANOVER-13.webp" width="1500px" height="700px" alt="Image 13"/>
+      <img src="/images/HANOVER-13.webp"  alt="Image 13"/>
     </SplideSlide>
     <SplideSlide>
-      <img src="/images/HANOVER-14.webp" width="1500px" height="700px" alt="Image 14"/>
+      <img src="/images/HANOVER-14.webp"  alt="Image 14"/>
     </SplideSlide>
   </Splide> 
 </Modal>
 
 <Modal bind:showModal={showModal.harwood}>
-  <img src="/images/20 Harwood St, Lynn.webp"/>
+  <img class="single-overlay" src="/images/20 Harwood St, Lynn.webp"/>
 </Modal>
 
 <Modal bind:showModal={showModal.breed}>
   <Splide aria-label="Carousel Breed">
     <SplideSlide>
-      <img src="/images/BREED-2.webp" width="1500px" height="700px" alt="Image 1"/>
+      <img src="/images/BREED-2.webp"  alt="Image 1"/>
     </SplideSlide>
     <SplideSlide>
-      <img src="/images/BREED-3.webp" width="1500px" height="700px" alt="Image 2"/>
+      <img src="/images/BREED-3.webp"  alt="Image 2"/>
     </SplideSlide>
     <SplideSlide>
-      <img src="/images/BREED-4.webp" width="1500px" height="700px" alt="Image 3"/>
+      <img src="/images/BREED-4.webp"  alt="Image 3"/>
     </SplideSlide>
     <SplideSlide>
-      <img src="/images/BREED-5.webp" width="1500px" height="700px" alt="Image 4"/>
+      <img src="/images/BREED-5.webp"  alt="Image 4"/>
     </SplideSlide>
     <SplideSlide>
-      <img src="/images/BREED-6.webp" width="1500px" height="700px" alt="Image 5"/>
+      <img src="/images/BREED-6.webp"  alt="Image 5"/>
     </SplideSlide>
     <SplideSlide>
-      <img src="/images/BREED-7.webp" width="1500px" height="700px" alt="Image 5"/>
+      <img src="/images/BREED-7.webp"  alt="Image 5"/>
     </SplideSlide>
     <SplideSlide>
-      <img src="/images/BREED-8.webp" width="1500px" height="700px" alt="Image 5"/>
+      <img src="/images/BREED-8.webp"  alt="Image 5"/>
     </SplideSlide>
   </Splide> 
 </Modal>
@@ -573,6 +573,28 @@ p {
   width: 100%;
   border-radius: 11px;
 }
+
+
+@media only screen and (max-width: 850px) {
+  .single-overlay {
+    max-width: 84vw;
+  }
+}
+
+
+
+:global(.splide__slide img) {
+    width: 100%;
+    height: auto;
+  }
+
+
+  
+  :global(.s-a65M7ZidXhwb hr) {
+    display: none;
+  }
+
+
 
 
 </style>

@@ -18,16 +18,16 @@ import '../app.css';</script>
 						<div class="menu-title">Social</div>
 						<div class="wp-widget-group__inner-blocks">
 							<ul>
-								<li>
+								<li class="no-list-style">
 									<a href="#" target="_blank" rel="noreferrer noopener">Instagram</a>
 								</li>
-								<li>
+								<li class="no-list-style">
 									<a href="#" target="_blank" rel="noreferrer noopener">Twitter</a>
 								</li>
-								<li>
+								<li class="no-list-style">
 									<a href="#" target="_blank" rel="noreferrer noopener">LinkedIn</a>
 								</li>
-								<li>
+								<li class="no-list-style">
 									<a href="#" target="_blank" rel="noreferrer noopener">Facebook</a>
 								</li>
 							</ul>
@@ -37,8 +37,8 @@ import '../app.css';</script>
 						<div class="menu-title">Info</div>
 						<div class="wp-widget-group__inner-blocks">
 							<ul>
-								<li><a href="#">About</a></li>
-								<li>
+								<li class="no-list-style"><a href="#">About</a></li>
+								<li class="no-list-style">
 									<a href="#" data-type="URL" data-id="/about/">Resources</a>
 								</li>
 							</ul>
@@ -48,7 +48,7 @@ import '../app.css';</script>
 		
 				<div class="right text-footer-links">
 					<div id="block-9" class="menu widget_block">
-						<div class="menu-title">Telephone Number</div>
+						<div class="menu-title">Phone</div>
 						<div class="wp-widget-group__inner-blocks">
 							<a href="tel:+1(781)-924-9442" class="text-footer-links">781-924-9442</a>
 							<br />
@@ -112,7 +112,7 @@ import '../app.css';</script>
 
 @media only screen and (max-width: 580px) {
   .left-right {
-    padding-left: 2.4rem;
+    padding-left: 1.4rem;
     padding-right: 1.4rem;
   }
 }
@@ -493,6 +493,11 @@ li a {
   line-height: 1.6;
   font-size: 18px;
 }
+@media only screen and (max-width: 480px) {
+  li a {
+  font-size: 16px;
+}
+}
 
 .text-footer-links {
   font-family: "Questrial", sans-serif;
@@ -503,6 +508,10 @@ li a {
 
 hr {
   margin-bottom: 2rem;
+}
+
+.no-list-style {
+  list-style: none;
 }
 
 </style>
