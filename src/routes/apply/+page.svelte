@@ -46,7 +46,7 @@ console.log(await res.json());
                 class="mktInputText"
                 bind:value={lastName}
               /></div></div></div><div class="mktFormRow"><div class="mktFormCol"><div class="mktFieldWrap"><input
-                type="number"
+                type="tel"
                 name="telephoneNumber"
                 placeholder="Phone Number"
                 class="mktInputText"
@@ -148,7 +148,7 @@ console.log(await res.json());
 }
 
 .formWrapper {
-  max-width: 550px;
+  /* max-width: 550px; */
   margin-top: 25px;
   margin-bottom: 150px;
   margin: 0;
@@ -215,7 +215,7 @@ console.log(await res.json());
   float: left;
   position: relative;
   min-height: 2em;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .mktFieldWrap {

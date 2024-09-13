@@ -5,6 +5,9 @@
   import { Splide, SplideSlide } from '@splidejs/svelte-splide';
   import '@splidejs/svelte-splide/css';
 
+
+  const pdfUrl = '/files/HouseRules.pdf';
+
   let showModal = {
     lewis: false,
     vernon: false,
@@ -18,6 +21,7 @@
   const onClickImg = (city) =>{
     showModal = {...showModal, [city]: !showModal.city };
   };
+
 
 </script>
 
@@ -155,25 +159,29 @@
 	</h1>
 	<a href="/apply" id="pdfButton" class="btn">APPLY NOW!</a>
 </section>
-<section data-color="white">
+<section class="text-section" data-color="white">
 	<div class="container">
+    <hr />
 		<div class="long-text-title">
-			<span class="long-text-span">
+			<span class="long-text-span span-title">
 				The HarwoodHouses offer those in early recovery an exceptional
 				opportunity to begin rebuilding their life in modern, clean, well
 				equipped sober homes in Lynn, Malden and Salem.
 			</span>
-			<!-- <span class="long-text-span">
+      <br />
+			<br />
+      <br />
+			<span class="long-text-span">
 				All houses have an on-site washer and dryer, free wifi, and all
 				rooms are fully furnished. Our success rate of residents who have
 				remained clean and sober and have moved on to the next phase of
 				their life is over 72%! This industry leading statistic shows that
 				the HarwoodHouses are your best bet when it comes to sober living
 				solutions.</span
-			> -->
+			>
 			<br />
 			<br />
-			<!-- <span class="long-text-span">
+			<span class="long-text-span">
 				We offer both short and long term residency in a supportive, family
 				oriented sober atmosphere. All houses are close to public
 				transportation and have off street parking available. With a drama
@@ -181,44 +189,16 @@
 				support and recovery options for all the residents, the Harwood
 				Houses are your best bet if you're looking to get your life back
 				together!</span
-			> -->
+			>
 		</div>
 	</div>
 </section>
 
 
-<section class="three-column-cards" data-color="white">
-	<div class="container">
-		<hr />
-		<div class="three-column-grid">
-      <div class="item">
-        <h2>Clean Living</h2>
-        <p>Zero Tolerance for Drugs and Alcohol</p>
-        <p>Twice weekly mandatory drug testing to maintain a 100% sober environment</p>
-        <div class="cta-text">
-          <!-- <a href="javascript:" 
-					on:click={downloadPdf} 
-					style="cursor: pointer;">SEE RULES</a> -->
-        </div>
-      </div>
-      <div class="item">
-        <div class="text-wrapper">
-          <h2>Personal Responsibility</h2>
-          <p>AA/NA meetings required</p>
-          <p>Household participation through chores and meetings</p>
-        </div>
-      </div>
-      <div class="item">
-        <h2>New Environment</h2>
-        <p>All homes are updated and clean, worthy of your new, clean lifestyle</p>
-        <p>Onsite, 24/7 management by people who have been through similar issues and are committed to your new life</p>
-      </div>
-    </div>
-		<hr id="properties" />
-	</div>
-</section>
 <section class="properties" data-color="white">
   <div class="container">
+    <hr />
+    <h2 class="our-properties">View Our Properties</h2>
     <div class="properties-grid">
       <div class="item">
         <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -296,6 +276,67 @@
   </div>
 </section>
 
+<section class="three-column-cards" data-color="white">
+	<div class="container">
+		<hr />
+		<div class="three-column-grid">
+      <div class="item">
+        <h2>Clean Living</h2>
+        <p>Zero Tolerance for Drugs and Alcohol</p>
+        <p>Twice weekly mandatory drug testing to maintain a 100% sober environment</p>
+        <div class="cta-text">
+          <a href={pdfUrl}  
+					style="cursor: pointer;" target="_blank" rel="noopener noreferrer">SEE RULES</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="text-wrapper">
+          <h2>Personal Responsibility</h2>
+          <p>AA/NA meetings required</p>
+          <p>Household participation through chores and meetings</p>
+        </div>
+      </div>
+      <div class="item">
+        <h2>New Environment</h2>
+        <p>All homes are updated and clean, worthy of your new, clean lifestyle</p>
+        <p>Onsite, 24/7 management by people who have been through similar issues and are committed to your new life</p>
+      </div>
+    </div>
+		<hr id="properties" />
+	</div>
+</section>
+
+<section data-color="white">
+  <div class="cta-banner container">
+    <h2 class="animated-line-heading animate-complete h2">
+      Let’s move things forward.
+    </h2>
+    <!-- <div class="long-text">
+      <span class="long-text-span">
+        All houses have an on-site washer and dryer, free wifi, and all
+        rooms are fully furnished. Our success rate of residents who have
+        remained clean and sober and have moved on to the next phase of
+        their life is over 72%! This industry leading statistic shows that
+        the HarwoodHouses are your best bet when it comes to sober living
+        solutions.</span
+      >
+      <br />
+      <br />
+      <span class="long-text-span">
+        We offer both short and long term residency in a supportive, family
+        oriented sober atmosphere. All houses are close to public
+        transportation and have off street parking available. With a drama
+        free, mature resident base and an on site manager who provides
+        support and recovery options for all the residents, the Harwood
+        Houses are your best bet if you're looking to get your life back
+        together!</span
+      >
+    </div> -->
+    <!-- <Link to="pdfEditor" id="pdfButton" class="cta-button">APPLY NOW!</Link> -->
+    <a href="/apply" id="pdfButton" class="btn">APPLY NOW!</a>
+  </div>
+</section>
+
 <style>
 
 
@@ -322,6 +363,8 @@ h1 {
 @media only screen and (max-width: 850px) {
   h1 {
     font-size: 32px;
+    margin-top: 2rem;
+    margin-bottom: 0;
   }
 }
 
@@ -349,7 +392,7 @@ h1 {
   font-weight: 500;
   letter-spacing: 0.03em;
   transition: background-color 0.66s ease-in-out, color 0.66s ease-in-out;
-  background-color: #3a3b3c !important;
+  background-color: #2563d7 !important;
   color: #f5f5f5;
   border-radius: 80px;
   padding: 18px 52px;
@@ -360,6 +403,12 @@ h1 {
 .btn a {
   text-decoration: none;
   color: #f5f5f5;
+}
+
+@media only screen and (max-width: 850px) {
+  .btn {
+    font-size: 24px;
+  }
 }
 
 .img {
@@ -420,11 +469,16 @@ h1 {
     object-fit: cover;
 	}
 
+  .long-text {
+    margin-bottom: 2rem;
+  }
+
   .long-text-title {
   margin-left: 10%;
   max-width: 1000px;
 
   margin: auto;
+  margin-bottom: 1rem; 
 }
 
 	.long-text-span {
@@ -438,9 +492,21 @@ h1 {
 }
 @media only screen and (max-width: 850px) {
   .long-text-span {
-    font-size: 18px;
+    font-size: 22px;
   }
 }
+
+.span-title {
+  font-size: 42px;
+  margin-bottom: 2rem;
+}
+@media only screen and (max-width: 850px) {
+  .span-title {
+    font-size: 32px;
+  }
+}
+
+
 
 
 .three-column-cards {
@@ -464,16 +530,17 @@ h1 {
 }
 
 hr {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
   
 } 
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
   hr {
-    margin-inline: 0 !important;
+    margin-top: 2rem;
+  margin-bottom: 2rem;
   }
-}  */
+} 
 
 li {
   list-style: none;
@@ -483,11 +550,13 @@ li {
   font-family: "Questrial", sans-serif;
   font-weight: 600;
   margin-top: 1rem;
+  color: #1c792e;
+  font-weight: 600;
 }
 
 .cta-text a {
   color: #1c792e;
-  font-weight: bolder;
+  font-weight: 600;
 }
 
 p {
@@ -516,8 +585,8 @@ p {
 }
 
 .properties-grid {
-  margin-top: 6rem;
-  margin-bottom: 6rem;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
   display: -webkit-flex;
   display: flex;
   -webkit-justify-content: space-around;
@@ -527,10 +596,25 @@ p {
   gap: 2rem;
 }
 
+@media only screen and (max-width: 850px) {
+  .properties-grid {
+    display: block;
+    padding-top: 2rem;
+    margin: 0;
+  }
+}
+
+
 .item {
   flex-basis: 25%;
   transition: all 0.6s ease;
   padding: 1rem;
+}
+
+@media only screen and (max-width: 850px) {
+  .item {
+    margin-bottom: 2rem;
+  }
 }
 
 .expand {
@@ -562,7 +646,7 @@ p {
 @media only screen and (max-width: 850px) {
   .inner-text {
     /* padding-left: 0.01rem; */
-    font-size: 12px;
+    font-size: 18px;
   }
 }
 
@@ -593,6 +677,96 @@ p {
   :global(.s-a65M7ZidXhwb hr) {
     display: none;
   }
+
+  .cta-banner {
+  display: grid;
+  place-items: center;
+  text-align: left;
+  margin-bottom: 6rem;
+}
+
+.cta-button {
+  font-family: "Questrial", sans-serif;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: background-color 0.66s ease-in-out, color 0.66s ease-in-out;
+  background-color: #1c792e;
+  color: #fff;
+  border-radius: 80px;
+  border: 2px solid;
+  padding: 18px 52px;
+  margin-top: 2rem;
+  max-height: 46px;
+  min-width: none;
+  cursor: pointer;
+  margin-bottom: 60px;
+  font-size: 30px;
+}
+
+.cta-button:hover {
+  font-family: "Questrial", sans-serif;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: background-color 0.66s ease-in-out, color 0.66s ease-in-out;
+  background-color: #1964ee !important;
+  color: #f5f5f5;
+  border-radius: 80px;
+  padding: 18px 52px;
+  max-height: 46px;
+  cursor: pointer;
+}
+
+.cta-button a {
+  text-decoration: none;
+  color: #f5f5f5;
+}
+
+@media only screen and (max-width: 420px) {
+  .h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
+
+.animated-line-heading {
+  font-family: "Questrial", sans-serif;
+    color: #151515;
+    font-size: 52px;
+    max-width: 90%;
+}
+
+.text-section {
+  margin: 0;
+}
+@media only screen and (max-width: 420px) {
+  .text-section {
+    margin-bottom: 2rem;
+  }
+}
+
+.our-properties {
+  font-family: "Questrial", sans-serif;   
+  color: #151515;
+  font-size: 42px;
+  font-weight: 500; 
+  line-height: 0;
+  margin-left: 4rem;
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .our-properties {
+    font-size: 32px;
+    margin-left: 1rem;
+    margin-bottom: 0;
+    /* margin: 0; */
+  }
+}
+
+
 
 
 

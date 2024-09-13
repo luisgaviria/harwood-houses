@@ -122,7 +122,7 @@ h1 {
   font-weight: 500;
   letter-spacing: 0.03em;
   transition: background-color 0.66s ease-in-out, color 0.66s ease-in-out;
-  background-color: #3a3b3c !important;
+  background-color: #2563d7 !important;
   color: #f5f5f5;
   border-radius: 80px;
   padding: 18px 52px;
