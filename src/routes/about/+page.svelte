@@ -189,7 +189,7 @@ h1 {
 .cta-banner {
   display: grid;
   place-items: center;
-  text-align: left;
+  text-align: center;
 	padding-top: 2.5rem;
 }
 
