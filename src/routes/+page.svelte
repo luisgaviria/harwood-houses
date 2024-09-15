@@ -676,9 +676,10 @@ p {
 
 
   
-  :global(dialog hr) {
+  :global(dialog > div > hr) {
     display: none;
   }
+
 
   .cta-banner {
   display: grid;
