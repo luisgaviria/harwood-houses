@@ -95,6 +95,8 @@ h1 {
 @media only screen and (max-width: 850px) {
   h1 {
     font-size: 32px;
+    margin-top: 2rem;
+    margin-bottom: 0;
   }
 }
 
@@ -129,6 +131,17 @@ h1 {
   max-height: 52px;
   cursor: pointer;
 }
+
+
+@media only screen and (max-width: 850px) {
+  .btn {
+    font-size: 24px;
+    display: grid;
+    place-items: center;
+  }
+}
+
+
 
 .btn a {
   text-decoration: none;
