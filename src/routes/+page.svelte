@@ -676,7 +676,7 @@ p {
 
 
   
-  :global(.s-a65M7ZidXhwb hr) {
+  :global(dialog hr) {
     display: none;
   }
 
