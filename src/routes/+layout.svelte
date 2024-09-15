@@ -37,10 +37,10 @@ import '../app.css';</script>
 						<div class="menu-title">Info</div>
 						<div class="wp-widget-group__inner-blocks">
 							<ul>
-								<li class="no-list-style"><a href="#">About</a></li>
-								<li class="no-list-style">
-									<a href="#" data-type="URL" data-id="/about/">Resources</a>
-								</li>
+								<li class="no-list-style"><a href="/about">About</a></li>
+								<!-- <li class="no-list-style">
+									<a href="#" data-type="URL" data-id="/about">Resources</a>
+								</li> -->
 							</ul>
 						</div>
 					</div>
