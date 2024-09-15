@@ -683,7 +683,7 @@ p {
   .cta-banner {
   display: grid;
   place-items: center;
-  text-align: left;
+  text-align: center;
   margin-bottom: 6rem;
 }
 
