@@ -33,7 +33,8 @@ console.log(await res.json());
   <div class="rowWrapper column">
     <div class="columnLeft"><h2 class="columnLeftH2">Start Your Journey with Harwood Houses</h2><p class="mktP">
       Harwood Houses provides supportive sober living environments tailored for recovery. Apply below to secure a place in our top-rated sober houses and begin your journey to a healthier lifestyle.
-  </p><div class="theForm"><div class="formWrapper"><form class="mktForm"><div class="mktFormRow"><div class="mktFormCol"><div class="mktFieldWrap">
+  </p>
+  <div class="theForm"><div class="formWrapper"><form class="mktForm"><div class="mktFormRow"><div class="mktFormCol"><div class="mktFieldWrap">
         <input
                 name="firstName"
                 placeholder="First Name"

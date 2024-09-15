@@ -66,7 +66,7 @@
 		<h2 class="animated-line-heading animate-complete h2">
 			Let's move things forward.
 		</h2>
-		<a href="/apply" id="pdfButton" class="cta-button">APPLY NOW!</a>
+		<a href="/apply" id="pdfButton" class="btn">APPLY NOW!</a>
 	</div>
 </section>
 <style>
@@ -203,7 +203,7 @@ h1 {
   display: grid;
   place-items: center;
   text-align: center;
-	padding-top: 2.5rem;
+  margin-bottom: 6rem;
 }
 
 .cta-button {
@@ -272,6 +272,27 @@ h1 {
 		display: block;
     object-fit: cover;
 	}
+
+
+  hr {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+  
+} 
+
+@media (max-width: 768px) {
+  hr {
+    margin-top: 2rem;
+  margin-bottom: 2rem;
+  }
+} 
+
+.animated-line-heading {
+  font-family: "Questrial", sans-serif;
+    color: #151515;
+    font-size: 52px;
+    max-width: 90%;
+}
 
 
 </style>
