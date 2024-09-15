@@ -408,6 +408,8 @@ h1 {
 @media only screen and (max-width: 850px) {
   .btn {
     font-size: 24px;
+    display: grid;
+    place-items: center;
   }
 }
 
