@@ -50,7 +50,7 @@ import '../app.css';</script>
 					<div id="block-9" class="menu widget_block">
 						<div class="menu-title">Phone</div>
 						<div class="wp-widget-group__inner-blocks">
-							<a href="tel:+1(781)-924-9442" class="text-footer-links">781-924-9442</a>
+							<a href="tel:+1(781)-226-7009" class="text-footer-links">781-226-7009</a>
 							<br />
 							<a href="mailto: HarwoodHouses@gmail.com" style="color: #151515">
 								Email
