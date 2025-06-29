@@ -38,9 +38,9 @@ import '../app.css';</script>
 						<div class="wp-widget-group__inner-blocks">
 							<ul>
 								<li class="no-list-style"><a href="/about">About</a></li>
-								<!-- <li class="no-list-style">
-									<a href="#" data-type="URL" data-id="/about">Resources</a>
-								</li> -->
+								 <li class="no-list-style">
+									<a href="/files/HouseRules.pdf" data-type="URL">Rules</a>
+								</li> 
 							</ul>
 						</div>
 					</div>
