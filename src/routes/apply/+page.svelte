@@ -1,293 +1,130 @@
 <script>
   import axios from "axios";
-  const rawHtml = ``;
-  let firstName = ``;
-  let lastName = ``;
-  let telephoneNumber = ``;
-  let email = ``;
-  let message = ``;
- 
 
-  const onSubmit =async () =>{
+  let firstName = "";
+  let lastName = "";
+  let telephoneNumber = "";
+  let email = "";
+  let message = "";
+  let isSubmitted = false;
+
+  const onSubmit = async (event) => {
+    event.preventDefault(); // Prevent form refresh
+
     const formData = new FormData();
-    formData.append("firstName",firstName);
-    console.log(firstName);
-    formData.append("lastName",lastName);
-    formData.append("telephoneNumber",telephoneNumber);
-    formData.append("email",email);
-    formData.append("message",message); 
-    const res = await axios({
-  method: "post",
-  url: "/api/mail",
-  data: formData,
-  headers: { "Content-Type": "multipart/form-data" },
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-console.log(await res.json());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    formData.append("firstName", firstName);
+    formData.append("lastName", lastName);
+    formData.append("telephoneNumber", telephoneNumber);
+    formData.append("email", email);
+    formData.append("message", message);
+
+    try {
+      const res = await axios.post("/api/mail", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+
+      console.log(res.data);
+      isSubmitted = true;
+    } catch (error) {
+      console.error("Form submission failed:", error);
+      // You could show a user-friendly error here
+    }
   };
 </script>
 
 <div class="container">
-  <!-- {@html rawHtml} -->
   <div class="rowWrapper column">
-    <div class="columnLeft"><h2 class="columnLeftH2">Start Your Journey with Harwood Houses</h2><p class="mktP">
-      Harwood Houses provides supportive sober living environments tailored for recovery. Apply below to secure a place in our top-rated sober houses and begin your journey to a healthier lifestyle.
-  </p>
-  <div class="theForm"><div class="formWrapper"><form class="mktForm"><div class="mktFormRow"><div class="mktFormCol"><div class="mktFieldWrap">
-        <input
-                name="firstName"
-                placeholder="First Name"
-                class="mktInputText"
-                bind:value={firstName}
-                /></div></div><div class="mktFormCol"><div class="mktFieldWrap">
-                <input
-                name="lastName"
-                placeholder="Last Name"
-                class="mktInputText"
-                bind:value={lastName}
-              /></div></div></div><div class="mktFormRow"><div class="mktFormCol"><div class="mktFieldWrap"><input
-                type="tel"
-                name="telephoneNumber"
-                placeholder="Phone Number"
-                class="mktInputText"
-                bind:value={telephoneNumber}
-              /></div></div><div class="mktFormCol"><div class="mktFieldWrap"><input
-                name="email"
-                placeholder="Email"
-                class="mktInputText"
-                bind:value={email}
-              /></div></div></div><div class="mktFormRowSingle"><div class="mktFormCol"><div class="mktFieldWrap"><textarea
-                name="message"
-                placeholder="Message"
-                class="mktInputTextArea"
-                bind:value={message}
-              ></textarea></div></div></div><div class="mktButtonRow"><span class="mktButtonSpan"><button on:click={onSubmit} type="submit" class="mktButton">Submit</button></span></div></form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
+    <div class="columnLeft">
+      <h2 class="columnLeftH2">Start Your Journey with Harwood Houses</h2>
+      <p class="mktP">
+        Harwood Houses provides supportive sober living environments tailored for recovery. Apply below to secure a place in our top-rated sober houses and begin your journey to a healthier lifestyle.
+      </p>
+
+      {#if !isSubmitted}
+        <div class="theForm">
+          <div class="formWrapper">
+            <form class="mktForm" on:submit={onSubmit}>
+              <div class="mktFormRow">
+                <div class="mktFormCol">
+                  <div class="mktFieldWrap">
+                    <input
+                      name="firstName"
+                      placeholder="First Name"
+                      class="mktInputText"
+                      bind:value={firstName}
+                    />
+                  </div>
+                </div>
+                <div class="mktFormCol">
+                  <div class="mktFieldWrap">
+                    <input
+                      name="lastName"
+                      placeholder="Last Name"
+                      class="mktInputText"
+                      bind:value={lastName}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="mktFormRow">
+                <div class="mktFormCol">
+                  <div class="mktFieldWrap">
+                    <input
+                      type="tel"
+                      name="telephoneNumber"
+                      placeholder="Phone Number"
+                      class="mktInputText"
+                      bind:value={telephoneNumber}
+                    />
+                  </div>
+                </div>
+                <div class="mktFormCol">
+                  <div class="mktFieldWrap">
+                    <input
+                      name="email"
+                      placeholder="Email"
+                      class="mktInputText"
+                      bind:value={email}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="mktFormRowSingle">
+                <div class="mktFormCol">
+                  <div class="mktFieldWrap">
+                    <textarea
+                      name="message"
+                      placeholder="Message"
+                      class="mktInputTextArea"
+                      bind:value={message}
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mktButtonRow">
+                <span class="mktButtonSpan">
+                  <button type="submit" class="mktButton">Submit</button>
+                </span>
+              </div>
+            </form>
           </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
-      </div>
-
-
+      {:else}
+        <div class="thankYouMessage">
+          <h2>Thank you for your submission!</h2>
+          <p>We’ll be in touch with you shortly.</p>
+        </div>
+      {/if}
+    </div>
+  </div>
 </div>
+
+
+
+
 
 <style>
   /* Base styles */
