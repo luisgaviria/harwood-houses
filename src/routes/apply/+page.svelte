@@ -114,9 +114,10 @@
         </div>
       {:else}
         <div class="thankYouMessage">
-          <h2>Thank you for your submission!</h2>
-          <p>We’ll be in touch with you shortly.</p>
+        <h5 class="success-text">Thank you for your submission!</h5>
+        <p class="success-subtext">We’ll be in touch with you shortly.</p>
         </div>
+
       {/if}
     </div>
   </div>
@@ -148,6 +149,24 @@
   padding: 0;
   box-sizing: border-box;
   padding-bottom: 6.5rem;
+}
+
+.thankYouMessage {
+  text-align: center;
+  padding: 2rem;
+}
+
+.success-text {
+  color: white;
+  font-weight: bold;
+  font-size: 20px; /* equivalent to h5 size */
+  margin-bottom: 0.5rem;
+}
+
+.success-subtext {
+  color: white;
+  font-size: 16px;
+  margin-top: 0;
 }
 
 .columnLeftH2 {
