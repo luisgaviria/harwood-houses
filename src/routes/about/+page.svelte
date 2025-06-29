@@ -27,35 +27,25 @@
 <section>
 	<div class="container">
 		<div class="long-text-span-about">
-			Welcome to Harwood Houses, where we offer sober, clean, and affordable
-			living environments for individuals seeking a fresh start. With five
-			locations in Lynn, Salem, and Malden, Massachusetts, we provide short-
-			and long-term residency options in fully furnished homes equipped with
-			cable television and WIFI. Our properties are conveniently located near
-			public transportation and have off-street parking for your convenience.
+			Welcome to Harwood Houses. We hope this will mark a new beginning on your road to
+                        recovery and a new way of life. It is our goal to accommodate you the best we can with
+                        a level of structure and an atmosphere of recovery that promotes growth and integration
+                        into the real world.
 			<br />
 			<br />
-			At Harwood Houses, we take pride in our professionally managed properties
-			that promote clean living with a zero-tolerance policy for drugs and alcohol.
-			To maintain a 100% sober environment, we conduct supervised twice weekly mandatory
-			drug testing to ensure that all residents are committed to sobriety. Lab
-			results are available the same day as the sample is provided, and we will
-			email them to probation, DCF, or concerned family members at your direction
-			at no cost.
+			Welcome to Harwood Houses. We hope this will mark a new beginning on your road to
+recovery and a new way of life. It is our goal to accommodate you the best we can with
+a level of structure and an atmosphere of recovery that promotes growth and integration
+into the real world.
 			<br />
 			<br />
-			Additionally, we require participation in AA/NA meetings and household responsibilities
-			such as chores and meetings. We believe in personal responsibility and encourage
-			our residents to gainful employment, fostering a sense of purpose and financial
-			independence.
+			Welcome to Harwood Houses. We hope this will mark a new beginning on your road to
+recovery and a new way of life. It is our goal to accommodate you the best we can with
+a level of structure and an atmosphere of recovery that promotes growth and integration
+into the real world.
 			<br />
 			<br />
-			Our homes are updated and clean, providing a comfortable and welcoming environment
-			for your new, clean lifestyle. Our onsite 24/7 management team consists of
-			individuals who have been through similar issues and are committed to supporting
-			and encouraging our residents through their new journey. Thank you for considering
-			Harwood Houses for your fresh start. We are dedicated to providing a safe
-			and supportive environment for you to rebuild your life.
+			We look forward to working with you on your journey to recovery and a new way of life...
 		</div>
 	</div>
 	<hr />
