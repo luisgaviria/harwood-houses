@@ -1,495 +1,463 @@
-
 <script>
   import axios from "axios";
-  const rawHtml = ``;
-  let firstName = ``;
-  let lastName = ``;
-  let telephoneNumber = ``;
-  let email = ``;
-  let message = ``;
- 
 
-  const onSubmit =async () =>{
-    const formData = new FormData();
-    formData.append("firstName",firstName);
-    console.log(firstName);
-    formData.append("lastName",lastName);
-    formData.append("telephoneNumber",telephoneNumber);
-    formData.append("email",email);
-    formData.append("message",message); 
-    const res = await axios({
-  method: "post",
-  url: "/api/mail",
-  data: formData,
-  headers: { "Content-Type": "multipart/form-data" },
-});
+  let formData = {
+    smokeFreePolicyInitial: '',
+    programFeeInitial: '',
+    releaseOfInfoInitial: '',
+    personal: {
+      name: { first: '', last: '' },
+      address: { line1: '', line2: '', city: '', state: '', zip: '', country: 'United States' },
+      lengthAtAddress: '',
+      birthDate: '',
+      isUSCitizen: '',
+      phone: '',
+      isOkToCall: '',
+      isOkToLeaveMessage: '',
+    },
+    relationship: {
+      maritalStatus: 'Select One',
+      isRomantic: '',
+      childrenTotal: '',
+      childrenWithYou: '',
+      isPregnant: '',
+      dueDate: '',
+    },
+    history: {
+      livedInShelter: '',
+      where: '',
+      referredBy: '',
+      dates: '',
+    },
+    medications: '',
+    additionalInfo: '',
+  };
+
+  const onSubmit = async () => {
+    const SUBMIT_URL = '/application/';
+
+    const submissionData = new FormData();
+    submissionData.append('frm_action', 'create');
+    submissionData.append('form_id', '17');
+    submissionData.append('form_key', 'lydiasresidentapplication20227a96881fe7');
+    submissionData.append('frm_submit_entry_17', '34d0ef9e61');
+    submissionData.append('_wp_http_referer', '/application/');
+    submissionData.append('item_key', '');
+    submissionData.append('frm_state', 'TF28q2wsvPFn+DtHOQQufkM1gzFTPmbrXQbzFPmmJqY=');
+    submissionData.append('frm_verify', '');
     
-console.log(await res.json());
+    submissionData.append('item_meta[409]', formData.smokeFreePolicyInitial);
+    submissionData.append('item_meta[423]', formData.programFeeInitial);
+    submissionData.append('item_meta[420]', formData.releaseOfInfoInitial);
+    submissionData.append('item_meta[373][first]', formData.personal.name.first);
+    submissionData.append('item_meta[373][last]', formData.personal.name.last);
+    submissionData.append('item_meta[374][line1]', formData.personal.address.line1);
+    submissionData.append('item_meta[374][line2]', formData.personal.address.line2);
+    submissionData.append('item_meta[374][city]', formData.personal.address.city);
+    submissionData.append('item_meta[374][state]', formData.personal.address.state);
+    submissionData.append('item_meta[374][zip]', formData.personal.address.zip);
+    submissionData.append('item_meta[374][country]', formData.personal.address.country);
+    submissionData.append('item_meta[375]', formData.personal.lengthAtAddress);
+    submissionData.append('item_meta[376]', formData.personal.birthDate);
+    submissionData.append('item_meta[377]', formData.personal.isUSCitizen);
+    submissionData.append('item_meta[378]', formData.personal.phone);
+    submissionData.append('item_meta[379]', formData.personal.isOkToCall);
+    submissionData.append('item_meta[380]', formData.personal.isOkToLeaveMessage);
+    submissionData.append('item_meta[381]', formData.relationship.maritalStatus);
+    submissionData.append('item_meta[382]', formData.relationship.isRomantic);
+    submissionData.append('item_meta[383]', formData.relationship.childrenTotal);
+    submissionData.append('item_meta[384]', formData.relationship.childrenWithYou);
+    submissionData.append('item_meta[385]', formData.relationship.isPregnant);
+    submissionData.append('item_meta[386]', formData.relationship.dueDate);
+    submissionData.append('item_meta[387]', formData.history.livedInShelter);
+    submissionData.append('item_meta[388]', formData.history.where);
+    submissionData.append('item_meta[389]', formData.history.referredBy);
+    submissionData.append('item_meta[390]', formData.history.dates);
+    submissionData.append('item_meta[417]', formData.medications);
+    submissionData.append('item_meta[421]', formData.additionalInfo);
+
+    try {
+      console.log("Submitting to:", SUBMIT_URL);
+      const res = await axios({
+        method: "post",
+        url: SUBMIT_URL,
+        data: submissionData,
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+      console.log("Server response:", res.data);
+      alert("Application submitted successfully!");
+    } catch (error) {
+      console.error("Submission failed:", error);
+      alert("There was an error submitting your application.");
+    }
   };
 </script>
 
 <div class="container">
-  <!-- {@html rawHtml} -->
-  <div class="rowWrapper column">
-    <div class="columnLeft"><h2 class="columnLeftH2">Start Your Journey with Harwood Houses</h2><p class="mktP">
-      Harwood Houses provides supportive sober living environments tailored for recovery. Apply below to secure a place in our top-rated sober houses and begin your journey to a healthier lifestyle.
-  </p>
-  <div class="theForm"><div class="formWrapper"><form class="mktForm"><div class="mktFormRow"><div class="mktFormCol"><div class="mktFieldWrap">
-        <input
-                name="firstName"
-                placeholder="First Name"
-                class="mktInputText"
-                bind:value={firstName}
-                /></div></div><div class="mktFormCol"><div class="mktFieldWrap">
-                <input
-                name="lastName"
-                placeholder="Last Name"
-                class="mktInputText"
-                bind:value={lastName}
-              /></div></div></div><div class="mktFormRow"><div class="mktFormCol"><div class="mktFieldWrap"><input
-                type="tel"
-                name="telephoneNumber"
-                placeholder="Phone Number"
-                class="mktInputText"
-                bind:value={telephoneNumber}
-              /></div></div><div class="mktFormCol"><div class="mktFieldWrap"><input
-                name="email"
-                placeholder="Email"
-                class="mktInputText"
-                bind:value={email}
-              /></div></div></div><div class="mktFormRowSingle"><div class="mktFormCol"><div class="mktFieldWrap"><textarea
-                name="message"
-                placeholder="Message"
-                class="mktInputTextArea"
-                bind:value={message}
-              ></textarea></div></div></div><div class="mktButtonRow"><span class="mktButtonSpan"><button on:click={onSubmit} type="submit" class="mktButton">Submit</button></span></div></form>
+  <div class="columnLeft">
+    <h2 class="columnLeftH2">Start Your Journey with Harwood Houses</h2>
+    <p class="mktP">
+      Apply below to secure a place in our top-rated sober houses and begin your journey to a healthier lifestyle.
+    </p>
+
+    <div class="form-container">
+      <form on:submit|preventDefault={onSubmit}>
+        
+        <fieldset>
+          <legend>Policy Agreements</legend>
+          <div class="form-group">
+            <label for="smoke-policy">I read and agree to the smoke-free facility policy. <span class="required">*</span></label>
+            <input id="smoke-policy" type="text" bind:value={formData.smokeFreePolicyInitial} placeholder="Initial Here" maxlength="4" required />
+          </div>
+          <div class="form-group">
+            <label for="fee-policy">I am aware of the program fee. <span class="required">*</span></label>
+            <input id="fee-policy" type="text" bind:value={formData.programFeeInitial} placeholder="Initial Here" maxlength="4" required />
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Personal Information</legend>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="first-name">First Name</label>
+              <input id="first-name" type="text" bind:value={formData.personal.name.first} placeholder="Jane" />
+            </div>
+            <div class="form-group">
+              <label for="last-name">Last Name</label>
+              <input id="last-name" type="text" bind:value={formData.personal.name.last} placeholder="Doe" />
             </div>
           </div>
+          <div class="form-group">
+            <label for="address1">Address Line 1</label>
+            <input id="address1" type="text" bind:value={formData.personal.address.line1} placeholder="123 Main St" />
+          </div>
+           <div class="form-group">
+            <label for="address2">Address Line 2</label>
+            <input id="address2" type="text" bind:value={formData.personal.address.line2} placeholder="Apartment, studio, or floor" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="city">City</label>
+              <input id="city" type="text" bind:value={formData.personal.address.city} placeholder="Anytown" />
+            </div>
+            <div class="form-group">
+              <label for="state">State / Province</label>
+              <input id="state" type="text" bind:value={formData.personal.address.state} placeholder="CA" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="zip">Zip / Postal Code</label>
+              <input id="zip" type="text" bind:value={formData.personal.address.zip} placeholder="90210" />
+            </div>
+             <div class="form-group">
+              <label for="country">Country</label>
+              <select id="country" bind:value={formData.personal.address.country}>
+                <option>United States</option>
+                <option>Canada</option>
+                <option>Mexico</option>
+                <option>United Kingdom</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="length-address">Length of time at current address</label>
+            <input id="length-address" type="text" bind:value={formData.personal.lengthAtAddress} placeholder="e.g., 2 years" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="birth-date">Birth Date</label>
+              <input id="birth-date" type="text" bind:value={formData.personal.birthDate} placeholder="MM/DD/YYYY" />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input id="phone" type="tel" bind:value={formData.personal.phone} placeholder="(555) 123-4567" />
+            </div>
+          </div>
+          <div class="form-row">
+             <div class="form-group radio-group">
+                <p>Are you a US Citizen?</p>
+                <label><input type="radio" bind:group={formData.personal.isUSCitizen} value="Yes" /> Yes</label>
+                <label><input type="radio" bind:group={formData.personal.isUSCitizen} value="No" /> No</label>
+            </div>
+             <div class="form-group radio-group">
+                <p>Is it OK to call?</p>
+                <label><input type="radio" bind:group={formData.personal.isOkToCall} value="Yes" /> Yes</label>
+                <label><input type="radio" bind:group={formData.personal.isOkToCall} value="No" /> No</label>
+            </div>
+          </div>
+          {#if formData.personal.isOkToCall === 'Yes'}
+            <div class="form-group radio-group centered-radio">
+                <p>Is it OK to leave a message?</p>
+                <label><input type="radio" bind:group={formData.personal.isOkToLeaveMessage} value="Yes" /> Yes</label>
+                <label><input type="radio" bind:group={formData.personal.isOkToLeaveMessage} value="No" /> No</label>
+            </div>
+          {/if}
+        </fieldset>
+
+        <fieldset>
+          <legend>Relationship & Family</legend>
+          <div class="form-group">
+            <label for="marital-status">Marital Status</label>
+            <select id="marital-status" bind:value={formData.relationship.maritalStatus}>
+                <option>Select One</option><option>Single</option><option>Married</option><option>Separated</option><option>Divorced</option><option>Widowed</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group radio-group">
+              <p>In a romantic relationship?</p>
+              <label><input type="radio" bind:group={formData.relationship.isRomantic} value="Yes" /> Yes</label>
+              <label><input type="radio" bind:group={formData.relationship.isRomantic} value="No" /> No</label>
+            </div>
+            <div class="form-group radio-group">
+              <p>Are you currently pregnant?</p>
+              <label><input type="radio" bind:group={formData.relationship.isPregnant} value="Yes" /> Yes</label>
+              <label><input type="radio" bind:group={formData.relationship.isPregnant} value="No" /> No</label>
+            </div>
+          </div>
+          {#if formData.relationship.isPregnant === 'Yes'}
+            <div class="form-group">
+              <label for="due-date">Anticipated Due Date</label>
+              <input id="due-date" type="text" bind:value={formData.relationship.dueDate} placeholder="MM/DD/YYYY" />
+            </div>
+          {/if}
+          <div class="form-row">
+            <div class="form-group">
+              <label for="children-total">Total number of children</label>
+              <input id="children-total" type="text" bind:value={formData.relationship.childrenTotal} placeholder="e.g., 3" />
+            </div>
+            <div class="form-group">
+              <label for="children-with-you">Children living with you</label>
+              <input id="children-with-you" type="text" bind:value={formData.relationship.childrenWithYou} placeholder="e.g., 1" />
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>History</legend>
+          <div class="form-group radio-group centered-radio">
+            <p>Ever lived in a shelter/transitional housing?</p>
+            <label><input type="radio" bind:group={formData.history.livedInShelter} value="Yes" /> Yes</label>
+            <label><input type="radio" bind:group={formData.history.livedInShelter} value="No" /> No</label>
+          </div>
+          {#if formData.history.livedInShelter === 'Yes'}
+            <div class="form-group">
+              <label for="where-shelter">If so, where?</label>
+              <input id="where-shelter" type="text" bind:value={formData.history.where} />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="referred-by">Who referred you?</label>
+                <input id="referred-by" type="text" bind:value={formData.history.referredBy} />
+              </div>
+              <div class="form-group">
+                <label for="dates-stay">Dates of stay</label>
+                <input id="dates-stay" type="text" bind:value={formData.history.dates} placeholder="e.g., Jan 2022 - Mar 2022" />
+              </div>
+            </div>
+          {/if}
+        </fieldset>
+        
+        <fieldset>
+          <legend>Medications & Other Information</legend>
+           <div class="form-group">
+            <label for="meds">List any prescription and non-prescription medication you take with dosage and frequency.</label>
+            <textarea id="meds" rows="4" bind:value={formData.medications} placeholder="e.g., Ibuprofen, 200mg, as needed for pain..."></textarea>
+          </div>
+          <div class="form-group">
+            <label for="roi-policy">I will sign a release of information for all providers. <span class="required">*</span></label>
+            <input id="roi-policy" type="text" bind:value={formData.releaseOfInfoInitial} placeholder="Initial Here" maxlength="4" required />
+          </div>
+          <div class="form-group">
+            <label for="additional-info">Is there anything else you'd like us to know?</label>
+            <textarea id="additional-info" rows="4" bind:value={formData.additionalInfo}></textarea>
+          </div>
+        </fieldset>
+
+        <div class="submit-container">
+          <button type="submit" class="mktButton">Submit Application</button>
         </div>
-      </div>
+      </form>
+    </div>
+  </div>
 </div>
 
 <style>
-  /* Base styles */
   .container {
     display: grid;
     place-items: center;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
-  @media screen and (max-width: 768px) {
-  .container {
-    padding-top: 3rem;
-    padding-bottom: 6.5rem;
-  }
-}
-
-.theForm {
-  display: grid;
-  place-items: center;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  padding-bottom: 6.5rem;
-}
-
-.columnLeftH2 {
-  font-family: "Questrial", sans-serif;
-  color: #ffffff;
-  font-size: 34px;
-  max-width: 100%;
-  padding: 20px 20px 10px;
-  text-align: center;
-  line-height: 1.2;
-}
-
-.rowWrapper {
-  display: grid;
-  grid-template-columns: minmax(150px, 100%) 1fr;
-  place-items: center;
-  overflow: hidden;
-  -webkit-perspective: 1px;
-  perspective: 1px;
-  max-width: 650px;
-}
-
-.titleWrap {
-  text-align: center;
-}
-
-.titleWrapSpan {
-  font-size: 26px;
-  display: inline-block;
-  font-weight: 600;
-  padding: 1rem;
-  margin-bottom: 5px;
-  color: #ffffff;
-}
-
-.columnLeft {
-  visibility: visible;
-  animation-delay: 0.4s;
-  animation-name: fadeInUp;
-  height: 100%;
-  width: 100%;
-  vertical-align: top;
-  border-radius: 33px;
-  /* background-image: linear-gradient(120deg, #00a86b, #004d00); */
-  /* background-image: linear-gradient(120deg, #009874, #005a46); */
-  background-image: linear-gradient(120deg, #1c792e, #13541d);
-  /* background-image: linear-gradient(120deg, #1c792e, #092f18); */
-
-}
-
-.columnRight {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  display: block;
-}
-
-.formWrapper {
-  /* max-width: 550px; */
-  margin-top: 25px;
-  margin-bottom: 150px;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
-  z-index: 1;
-  background-color: rgba(255, 255, 255, 0.16);
-  border-radius: 30px 30px;
-}
-
-.mktForm {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  color: rgb(51, 51, 51);
-  margin-top: 10px;
-  width: 100% !important;
-  text-align: left;
-  padding-top: 1rem;
-}
-
-.mktFormRow {
-  width: 100%;
-
-  margin-top: 10px;
-  clear: both;
-  box-sizing: border-box;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  place-items: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
-
-}
-
-/* Media query for screens 768px or smaller */
-@media (max-width: 768px) {
-  .mktFormRow {
-    grid-template-columns: 1fr; /* Stack the columns vertically */
-    padding-left: 1rem; /* Adjust padding as needed */
-    padding-right: 1rem; /* Adjust padding as needed */
-    margin-top: 0px;
+    padding: 3rem 1rem;
+    font-family: "Questrial", sans-serif;
   }
 
-  .mktFormCol {
-    width: 100%; /* Ensure each column takes full width */
-    margin-bottom: 10px; /* Add spacing between stacked columns if needed */
-    max-width: 240px;
+  .columnLeft {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 20px;
+    background-image: linear-gradient(120deg, #1c792e, #13541d);
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   }
 
-  .mktFieldWrap {
-    width: 100%; /* Ensure the field wrapper takes full width */
+  .columnLeftH2, .mktP {
+    text-align: center;
+    color: #ffffff;
   }
 
-  .mktInputText {
-    width: 100%; /* Make the input field take full width of the container */
+  .columnLeftH2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
   }
-}
 
-.mktFormCol {
-  /* margin-left: 0 !important; */
-  width: 95%;
-  margin: 0 10px;
-  float: left;
-  position: relative;
-  min-height: 2em;
-  margin-bottom: 15px;
-}
-
-.mktFieldWrap {
-  position: relative;
-  width: 100%;
-  margin-bottom: 10px;
-  float: left;
-  text-align: left;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  place-items: center;
-}
-
-.mktInputText {
-  border: 1px solid #ebebeb !important;
-  padding: 3px 30px 3px 20px;
-  max-width: 100%;
-  font-family: "Tenon", arial;
-  box-shadow: 0 0 0 50px transparent inset;
-  -webkit-box-shadow: 0 0 0 50px transparent inset;
-  color: #888888;
-  border: 1px solid transparent;
-  background-color: #ffffff;
-  height: 41px;
-  font-size: 16px;
-  margin: 0;
-  outline: none;
-  cursor: pointer;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  border-radius: 50px;
-  color: #888888;
-  position: relative;
-  z-index: 1;
-}
-
-.mktInputTextArea {
-  border: 1px solid #ebebeb !important;
-  padding: 10px 30px 3px 20px;
-  width: 100%;
-  font-family: "Tenon", arial;
-  box-shadow: 0 0 0 50px transparent inset;
-  -webkit-box-shadow: 0 0 0 50px transparent inset;
-  color: #888888;
-  border: 1px solid transparent;
-  background-color: #ffffff;
-  font-size: 16px;
-  margin: 0;
-  outline: none;
-  cursor: pointer;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  border-radius: 20px;
-  color: #888888;
-  position: relative;
-  z-index: 1;
-  height: 100px;
-
-}
-
-.mktFormRowSingle {
-  width: 100%;
-  padding-left: 50px;
-  padding-right: 50px;
-  margin-top: 20px;
-  clear: both;
-  box-sizing: border-box;
-}
-
-.mktButtonRow {
-  position: relative;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  transform: translateX(-50%);
-  display: inline-block;
-  text-align: left;
-  margin: 0;
-  padding: 0;
-}
-
-.mktButtonSpan {
-  margin-left: 0 !important;
-  display: inline-block;
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: normal;
-  line-height: 1.67;
-  padding-top: 1rem;
-}
-
-.mktButton {
-  font-weight: 700;
-  margin-top: 10px;
-  margin-bottom: 40px;
-  -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  border: 2px solid;
-  border-radius: 100vmax;
-  text-decoration: none;
-  cursor: pointer;
-  background-image: none;
-  overflow: hidden;
-  line-height: 1.62;
-  padding: 0.4rem 1.7rem 0.3rem;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  white-space: nowrap;
-  background-color: #ffffff;
-  border-color: #ffffff;
-  font-size: 16px;
-  font-weight: bold;
-  letter-spacing: 0.7px;
-  text-align: center;
-  color: #13541d;
-  text-transform: uppercase;
-  white-space: nowrap;
-  text-shadow: none;
-  width: auto;
-  font-family: "Tenon", Arial;
-  box-shadow: none;
-  -webkit-box-shadow: none;
-}
-
-.mktButton:hover {
-  color: #ffffff;
-  background-color: #1964ee;
-  border-color: #1964ee;
-  text-decoration: none;
-}
-
-.imgWrapper {
-  visibility: visible;
-  animation-delay: 0.2s;
-  animation-name: fadeInRight;
-  height: 100%;
-  width: 100%;
-}
-
-.mktImg {
-  width: 100%;
-  height: 100%;
-  max-height: 1000px;
-  position: relative;
-  margin: 0;
-  padding: 0;
-  -o-object-fit: cover;
-  font-family: "object-fit:cover;object-position:center";
-  object-fit: cover;
-  -o-object-position: center;
-  object-position: center;
-  width: 100%;
-  max-width: 100%;
-  border: 0;
-  vertical-align: top;
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
-  overflow-clip-margin: content-box;
-  overflow: clip;
-  aspect-ratio: auto 645 / 976;
-}
-
-.mktP {
-  font-family: "Questrial", sans-serif;
-  font-size: 19px;
-  line-height: 1.56;
-  letter-spacing: normal;
-  margin-bottom: 16px;
-  font-weight: normal;
-  color: #ffffff;
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
-  /* padding-left: 65px;
-  max-width: 90%; */
-  padding: 0 2rem 2rem;
-}
-
-.close-button {
-  border: none;
-  display: inline-block;
-  vertical-align: middle;
-  overflow: hidden;
-  text-decoration: none;
-  color: inherit;
-  background-color: inherit;
-  text-align: center;
-  cursor: pointer;
-  white-space: nowrap;
-  font-size: xx-large;
-  z-index: 1;
-}
-
-/* Media Queries */
-
-/* Small screens: 275px - 480px */
-@media screen and (min-width: 275px) and (max-width: 480px) {
-  .titleWrapSpan {
-    font-size: 20px;
+  .mktP {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    opacity: 0.9;
   }
- 
-  .mktButton {
-    font-size: 20px;
-    padding: 0.3rem 1.4rem 0.2rem;
-  }
-}
 
-/* Medium screens: 481px - 767px */
-@media screen and (min-width: 481px) and (max-width: 767px) {
-  .titleWrapSpan {
-    font-size: 22px;
-  }
-  .mktInputText, .mktInputTextArea {
-    font-size: 15px;
-    padding: 3px 25px 3px 18px;
-    margin-right: 6px;
 
+  .form-container {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+  }
+
+  fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 2rem;
+  }
+  fieldset:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  legend {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.25rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .form-row {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  label, .radio-group p {
+    color: #f0f0f0;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .required {
+    color: #ffcdd2;
+    font-weight: bold;
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  select,
+  textarea {
+    width: 92%;
+    padding: 0.75rem 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: "Questrial", sans-serif;
+    color: #333;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #00a86b;
+    box-shadow: 0 0 0 3px rgba(0, 168, 107, 0.3);
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+
+  .radio-group {
+    background-color: rgba(0,0,0,0.15);
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  .radio-group p {
+    margin: 0 0 0.75rem 0; 
+    text-align: center;
+    font-weight: bold;
+  }
+  .radio-group label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 0;
+  }
+  .radio-group label:not(:last-child) {
+    margin-right: 1.5rem;
+  }
+  .radio-group div {
+      display: flex;
+      justify-content: center;
+  }
+  input[type="radio"] {
+    margin-right: 0.5rem;
+    accent-color: #00a86b;
+    width: 1.2em;
+    height: 1.2em;
+  }
+  .centered-radio {
+      grid-column: 1 / -1; 
+  }
+
+  .submit-container {
+    text-align: center;
+    margin-top: 2rem;
   }
   .mktButton {
-    font-size: 15px;
-    padding: 0.35rem 1.5rem 0.25rem;
+    font-weight: bold;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid #ffffff;
+    border-radius: 50px;
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 1.62;
+    padding: 0.8rem 2.5rem;
+    background-color: #ffffff;
+    font-size: 1.1rem;
+    letter-spacing: 0.7px;
+    text-align: center;
+    color: #13541d;
+    text-transform: uppercase;
   }
-}
 
-/* Large screens: 768px - 1024px */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .titleWrapSpan {
-    font-size: 24px;
+  .mktButton:hover {
+    background-color: transparent;
+    color: #ffffff;
   }
-  .mktInputText, .mktInputTextArea {
-    font-size: 16px;
-    padding: 3px 30px 3px 20px;
-    margin-right: 6px;
-
-  }
-  .mktButton {
-    font-size: 16px;
-    padding: 0.4rem 1.7rem 0.3rem;
-  }
-}
-
-/* Extra large screens: 1025px and up */
-@media screen and (min-width: 1025px) {
-  .titleWrapSpan {
-    font-size: 26px;
-  }
-  .mktInputText, .mktInputTextArea {
-    font-size: 17px;
-    padding: 3px 30px 3px 20px;
-  }
-  .mktButton {
-    font-size: 18px;
-    padding: 0.4rem 1.7rem 0.3rem;
-  }
-}
-
-
-
- 
 </style>
