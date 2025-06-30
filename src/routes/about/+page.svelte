@@ -31,7 +31,7 @@
 recovery and a new way of life. It is our goal to accommodate you the best we can with
 a level of structure and an atmosphere of recovery that promotes growth and integration
 into the real world.
-			<br />
+
 			<br />
 			We look forward to working with you on your journey to recovery and a new way of life...
 		</div>

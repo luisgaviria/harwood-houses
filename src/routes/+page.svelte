@@ -173,22 +173,14 @@
       <br />
 			<span class="long-text-span">
 				All houses have an on-site washer and dryer, free wifi, and all
-				rooms are fully furnished. Our success rate of residents who have
-				remained clean and sober and have moved on to the next phase of
-				their life is over 72%! This industry leading statistic shows that
-				the HarwoodHouses are your best bet when it comes to sober living
-				solutions.</span
+				rooms are fully furnished.</span
 			>
 			<br />
 			<br />
 			<span class="long-text-span">
 				We offer both short and long term residency in a supportive, family
 				oriented sober atmosphere. All houses are close to public
-				transportation and have off street parking available. With a drama
-				free, mature resident base and an on site manager who provides
-				support and recovery options for all the residents, the Harwood
-				Houses are your best bet if you're looking to get your life back
-				together!</span
+				transportation and have off street parking available.</span
 			>
 		</div>
 	</div>
