@@ -27,13 +27,38 @@
 <section>
 	<div class="container">
 		<div class="long-text-span-about">
-			Welcome to Harwood Houses. We hope this will mark a new beginning on your road to
+
+      Welcome to Harwood Houses. We hope this will mark a new beginning on your road to
 recovery and a new way of life. It is our goal to accommodate you the best we can with
 a level of structure and an atmosphere of recovery that promotes growth and integration
 into the real world.
 
 			<br />
-			We look forward to working with you on your journey to recovery and a new way of life...
+			<br />
+
+
+Our Members will be involved in a recovery program of personal choice to aid them on
+their way. We will hold regular house meetings to introduce our Members to the process
+of recovery, in an effort to maximize growth potential and establish a routine for a new
+way of living upon discharge. We will meet with the members on a 1 on 1 basis to
+identify areas of accomplishments and areas of improvement alike.
+
+			<br />
+			<br />
+
+
+It is our goal that every Member has an equal opportunity to grow, and to face the
+challenges of life while living clean and sober. Here at the Harwood Houses we believe
+it is possible to reform and reintegrate the individual when given the chance. Our Staff
+are recovering addicts and alcoholics who offer a simple solution. As fellow recovering
+addicts and alcoholics, we have a unique perspective of understanding of the
+challenges of living clean and sober, and it is our goal to give back with a message of
+experience, strength, and hope.
+
+			<br />
+			<br />
+
+We look forward to working with you on your journey to recovery and a new way of life...
 		</div>
 	</div>
 	<hr />
