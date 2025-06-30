@@ -28,18 +28,6 @@
 	<div class="container">
 		<div class="long-text-span-about">
 			Welcome to Harwood Houses. We hope this will mark a new beginning on your road to
-                        recovery and a new way of life. It is our goal to accommodate you the best we can with
-                        a level of structure and an atmosphere of recovery that promotes growth and integration
-                        into the real world.
-			<br />
-			<br />
-			Welcome to Harwood Houses. We hope this will mark a new beginning on your road to
-recovery and a new way of life. It is our goal to accommodate you the best we can with
-a level of structure and an atmosphere of recovery that promotes growth and integration
-into the real world.
-			<br />
-			<br />
-			Welcome to Harwood Houses. We hope this will mark a new beginning on your road to
 recovery and a new way of life. It is our goal to accommodate you the best we can with
 a level of structure and an atmosphere of recovery that promotes growth and integration
 into the real world.
