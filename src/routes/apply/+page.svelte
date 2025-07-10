@@ -164,7 +164,7 @@
           <div class="form-row">
             <div class="form-group">
               <label for="birth-date">Birth Date</label>
-              <input id="birth-date" type="text" bind:value={formData.personal.birthDate} placeholder="MM/DD/YYYY" />
+              <input id="birth-date" type="date" bind:value={formData.personal.birthDate} />
             </div>
             <div class="form-group">
               <label for="phone">Phone Number</label>
@@ -215,7 +215,7 @@
           {#if formData.relationship.isPregnant === 'Yes'}
             <div class="form-group">
               <label for="due-date">Anticipated Due Date</label>
-              <input id="due-date" type="text" bind:value={formData.relationship.dueDate} placeholder="MM/DD/YYYY" />
+              <input id="due-date" type="date" bind:value={formData.relationship.dueDate} />
             </div>
           {/if}
           <div class="form-row">
@@ -248,8 +248,8 @@
                 <input id="referred-by" type="text" bind:value={formData.history.referredBy} />
               </div>
               <div class="form-group">
-                <label for="dates-stay">Dates of stay</label>
-                <input id="dates-stay" type="text" bind:value={formData.history.dates} placeholder="e.g., Jan 2022 - Mar 2022" />
+                <label for="dates-stay">Date of stay</label>
+                <input id="dates-stay" type="date" bind:value={formData.history.dates} />
               </div>
             </div>
           {/if}
@@ -374,9 +374,11 @@
 
   input[type="text"],
   input[type="tel"],
+  input[type="date"],
   select,
   textarea {
-    width: 92%;
+    width: 100%;
+    box-sizing: border-box;
     padding: 0.75rem 1rem;
     background-color: rgba(255, 255, 255, 0.9);
     border: 1px solid transparent;
@@ -385,6 +387,57 @@
     font-family: "Questrial", sans-serif;
     color: #333;
     transition: border-color 0.3s, box-shadow 0.3s;
+    margin: 0;
+    appearance: none;
+  }
+
+  /* Style the calendar icon for date inputs */
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.4) sepia(1) saturate(5) hue-rotate(90deg);
+    cursor: pointer;
+    height: 1.5em;
+    width: 1.5em;
+  }
+  input[type="date"]::-webkit-input-placeholder { color: #888; }
+  input[type="date"]::-moz-placeholder { color: #888; }
+  input[type="date"]:-ms-input-placeholder { color: #888; }
+  input[type="date"]::placeholder { color: #888; }
+
+  /* Remove default arrow for date input in Firefox */
+  input[type="date"]::-webkit-inner-spin-button,
+  input[type="date"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Make all form groups consistent */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.25rem;
+    width: 100%;
+  }
+
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  .form-row .form-group {
+    flex: 1 1 0;
+    min-width: 180px;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 600px) {
+    .form-row {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .form-row .form-group {
+      min-width: 0;
+    }
   }
 
   input:focus, select:focus, textarea:focus {
