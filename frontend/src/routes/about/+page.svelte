@@ -1,6 +1,15 @@
 <script>
 	import bannerImage from '$lib/images/HarwoodHousesLogo.webp';
 	import welcome_fallback from '$lib/images/svelte-welcome.png';
+  import fetchApi from '$lib/utils/strapi.js';
+  const promise = fetchApi({
+    endpoint: 'about',
+    query: {
+      populate: '*'
+    },
+    wrappedByKey: 'data',
+    wrappedByList: false
+  });
 </script>
 
 
@@ -68,6 +77,9 @@ We look forward to working with you on your journey to recovery and a new way of
 	<div class="cta-banner container">
 		<h2 class="animated-line-heading animate-complete h2">
 			Let's move things forward.
+      {#await promise then data }
+      <p>{JSON.stringify(data)}</p>
+      {/await}
 		</h2>
 		<a href="/apply" id="pdfButton" class="btn">APPLY NOW!</a>
 	</div>
