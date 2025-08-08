@@ -107,20 +107,20 @@
       console.error(error);
     }
   };
+
+  export let data; // we get it straight from +page.server.js
 </script>
 
 <div class="container">
   <div class="columnLeft">
-    <h2 class="columnLeftH2">Start Your Journey with Harwood Houses</h2>
+    <h2 class="columnLeftH2">{data.title}</h2>
     <p class="mktP">
-      Apply below to secure a place in our top-rated sober houses and begin your
-      journey to a healthier lifestyle.
+    {data.subTitle}
     </p>
-
     <div class="form-container">
       <form on:submit|preventDefault={onSubmit}>
         <fieldset>
-          <legend>Policy Agreements</legend>
+          <legend>{data.TwoInputsBlock.Title}</legend>
           <div class="form-group">
             <label for="smoke-policy"
               >I read and agree to the smoke-free facility policy. <span

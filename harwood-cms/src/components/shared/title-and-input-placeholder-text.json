@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_title_and_input_placeholder_texts",
+  "info": {
+    "displayName": "TitleAndInputPlaceholderText",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "TitleText": {
+      "type": "string"
+    },
+    "PlaceholderText": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

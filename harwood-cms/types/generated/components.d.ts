@@ -62,6 +62,38 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTitleAndInputPlaceholderText
+  extends Struct.ComponentSchema {
+  collectionName: 'components_shared_title_and_input_placeholder_texts';
+  info: {
+    displayName: 'TitleAndInputPlaceholderText';
+    icon: 'book';
+  };
+  attributes: {
+    PlaceholderText: Schema.Attribute.String;
+    TitleText: Schema.Attribute.String;
+  };
+}
+
+export interface SharedTwoInputs extends Struct.ComponentSchema {
+  collectionName: 'components_shared_two_inputs';
+  info: {
+    displayName: 'Two Inputs';
+    icon: 'alien';
+  };
+  attributes: {
+    Title: Schema.Attribute.String;
+    TitleAndInputPlaceholderText: Schema.Attribute.Component<
+      'shared.title-and-input-placeholder-text',
+      false
+    >;
+    TitleAndInputPlaceholderText2: Schema.Attribute.Component<
+      'shared.title-and-input-placeholder-text',
+      false
+    >;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -70,6 +102,8 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.title-and-input-placeholder-text': SharedTitleAndInputPlaceholderText;
+      'shared.two-inputs': SharedTwoInputs;
     }
   }
 }

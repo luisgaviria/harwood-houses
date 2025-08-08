@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_two_inputs",
+  "info": {
+    "displayName": "Two Inputs",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "TitleAndInputPlaceholderText": {
+      "type": "component",
+      "component": "shared.title-and-input-placeholder-text",
+      "repeatable": false
+    },
+    "TitleAndInputPlaceholderText2": {
+      "type": "component",
+      "component": "shared.title-and-input-placeholder-text",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

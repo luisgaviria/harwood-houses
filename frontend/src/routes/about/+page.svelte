@@ -1,15 +1,8 @@
 <script>
 	import bannerImage from '$lib/images/HarwoodHousesLogo.webp';
 	import welcome_fallback from '$lib/images/svelte-welcome.png';
-  import fetchApi from '$lib/utils/strapi.js';
-  const promise = fetchApi({
-    endpoint: 'about',
-    query: {
-      populate: '*'
-    },
-    wrappedByKey: 'data',
-    wrappedByList: false
-  });
+
+  export let data; // we get it straight from +page.server.js
 </script>
 
 
@@ -27,8 +20,7 @@
 		</picture>
 	</div>
 	<h1>
-		Begin your journey in recovery at the North Shore's best sober living
-		residences!
+    {data.title}
 	</h1>
 	<a href="/apply" id="pdfButton" class="btn">APPLY NOW!</a>
 </section>
@@ -36,7 +28,15 @@
 <section>
 	<div class="container">
 		<div class="long-text-span-about">
+    {#each data.blocks as block, index}
+      {block.body}
+      {#if data.blocks.length - 1 > index }
+        <br/>
+        <br/>
+      {/if}
 
+    {/each}
+<!-- 
       Welcome to Harwood Houses. We hope this will mark a new beginning on your road to
 recovery and a new way of life. It is our goal to accommodate you the best we can with
 a level of structure and an atmosphere of recovery that promotes growth and integration
@@ -68,18 +68,14 @@ experience, strength, and hope.
 			<br />
 
 We look forward to working with you on your journey to recovery and a new way of life...
-		</div>
+		</div> -->
 	</div>
-	<hr />
+  <hr/>
 </section>
-
 <section data-color="white">
 	<div class="cta-banner container">
 		<h2 class="animated-line-heading animate-complete h2">
 			Let's move things forward.
-      {#await promise then data }
-      <p>{JSON.stringify(data)}</p>
-      {/await}
 		</h2>
 		<a href="/apply" id="pdfButton" class="btn">APPLY NOW!</a>
 	</div>

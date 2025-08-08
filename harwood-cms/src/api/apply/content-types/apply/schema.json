@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "applies",
+  "info": {
+    "singularName": "apply",
+    "pluralName": "applies",
+    "displayName": "Apply"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subTitle": {
+      "type": "string"
+    },
+    "TwoInputsBlock": {
+      "type": "component",
+      "component": "shared.two-inputs",
+      "repeatable": false
+    }
+  }
+}
