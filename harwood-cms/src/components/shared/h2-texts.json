@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_h2_texts",
+  "info": {
+    "displayName": "h2 texts",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "Text": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

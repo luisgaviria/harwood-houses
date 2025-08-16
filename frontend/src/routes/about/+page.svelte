@@ -3,17 +3,18 @@
 	import welcome_fallback from '$lib/images/svelte-welcome.png';
 
   export let data; // we get it straight from +page.server.js
+  console.log(data);
 </script>
 
 
 <svelte:head>
-    <title>About Us | Harwood Houses</title>
+    <title>{data.titleOfSiteTab}</title>
     <meta name="description" content="Learn about Harwood Houses, offering sober living residences in Lynn, Salem, and Malden, MA. Discover our commitment to recovery and support.">
 </svelte:head>
 
 
 <section class="banner" data-color="white">
-	<div class="container banner-wrapper">
+	<div class="container banner-wrapper">  
 		<picture>
 			<source srcset={bannerImage} type="image/webp" />
 			<img src={welcome_fallback} alt="Welcome" />
@@ -22,7 +23,7 @@
 	<h1>
     {data.title}
 	</h1>
-	<a href="/apply" id="pdfButton" class="btn">APPLY NOW!</a>
+	<a href="/apply" id="pdfButton" class="btn">{data.global.buttonToApply}</a>
 </section>
 
 <section>
@@ -34,41 +35,7 @@
         <br/>
         <br/>
       {/if}
-
     {/each}
-<!-- 
-      Welcome to Harwood Houses. We hope this will mark a new beginning on your road to
-recovery and a new way of life. It is our goal to accommodate you the best we can with
-a level of structure and an atmosphere of recovery that promotes growth and integration
-into the real world.
-
-			<br />
-			<br />
-
-
-Our Members will be involved in a recovery program of personal choice to aid them on
-their way. We will hold regular house meetings to introduce our Members to the process
-of recovery, in an effort to maximize growth potential and establish a routine for a new
-way of living upon discharge. We will meet with the members on a 1 on 1 basis to
-identify areas of accomplishments and areas of improvement alike.
-
-			<br />
-			<br />
-
-
-It is our goal that every Member has an equal opportunity to grow, and to face the
-challenges of life while living clean and sober. Here at the Harwood Houses we believe
-it is possible to reform and reintegrate the individual when given the chance. Our Staff
-are recovering addicts and alcoholics who offer a simple solution. As fellow recovering
-addicts and alcoholics, we have a unique perspective of understanding of the
-challenges of living clean and sober, and it is our goal to give back with a message of
-experience, strength, and hope.
-
-			<br />
-			<br />
-
-We look forward to working with you on your journey to recovery and a new way of life...
-		</div> -->
 	</div>
   <hr/>
 </section>

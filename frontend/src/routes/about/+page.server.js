@@ -9,5 +9,14 @@ export const load = async () => {
     wrappedByList: false
   });
 
-  return data;
+  const global = await fetchApi({
+    endpoint: 'global',
+    query: {
+      populate: '*'
+    },
+    wrappedByKey: 'data',
+    wrappedByList: false
+  });
+
+  return {...data, global};
 };

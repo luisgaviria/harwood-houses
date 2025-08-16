@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_grid_components",
+  "info": {
+    "displayName": "Grid components",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "Header": {
+      "type": "string"
+    },
+    "Paragraphs": {
+      "type": "component",
+      "component": "shared.paragraphs",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -22,11 +22,12 @@
     showModal = {...showModal, [city]: !showModal.city };
   };
 
-
+  export let data;
+  console.log(data);
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>{data.titleOfSiteTab}</title>
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
@@ -154,8 +155,7 @@
 		</picture>
 	</div>
 	<h1>
-		Begin your journey in recovery at the North Shore's best sober living
-		residences!
+{data.title}
 	</h1>
 	<a href="/apply" id="pdfButton" class="btn">APPLY NOW!</a>
 </section>
@@ -164,24 +164,18 @@
     <hr />
 		<div class="long-text-title">
 			<span class="long-text-span span-title">
-				The HarwoodHouses offer those in early recovery an exceptional
-				opportunity to begin rebuilding their life in modern, clean, well
-				equipped sober homes in Lynn, Malden and Salem.
+        {data.H1Text}
 			</span>
       <br />
 			<br />
       <br />
-			<span class="long-text-span">
-				All houses have an on-site washer and dryer, free wifi, and all
-				rooms are fully furnished.</span
-			>
-			<br />
-			<br />
-			<span class="long-text-span">
-				We offer both short and long term residency in a supportive, family
-				oriented sober atmosphere. All houses are close to public
-				transportation and have off street parking available.</span
-			>
+      {#each data.texts as block, index}
+      <span class="long-text-span">
+        {block.Text}
+      </span>
+      <br/>
+      <br/>
+      {/each} 
 		</div>
 	</div>
 </section>
@@ -273,9 +267,10 @@
 		<hr />
 		<div class="three-column-grid">
       <div class="item">
-        <h2>Clean Living</h2>
-        <p>Zero Tolerance for Drugs and Alcohol</p>
-        <p>Twice weekly mandatory drug testing to maintain a 100% sober environment</p>
+        <h2>{data.GridComponents[0].Header}</h2>
+        {#each data.GridComponents[0].Paragraphs as paragraph, index}
+          <p>{paragraph.paragraph}</p>
+        {/each} 
         <div class="cta-text">
           <a href={pdfUrl}  
 					style="cursor: pointer;" target="_blank" rel="noopener noreferrer">SEE RULES</a>
@@ -283,15 +278,17 @@
       </div>
       <div class="item">
         <div class="text-wrapper">
-          <h2>Personal Responsibility</h2>
-          <p>Recovery meetings of choice are required</p>
-          <p>Household participation through chores and meetings</p>
+        <h2>{data.GridComponents[1].Header}</h2>
+        {#each data.GridComponents[1].Paragraphs as paragraph, index}
+          <p>{paragraph.paragraph}</p>
+        {/each} 
         </div>
       </div>
       <div class="item">
-        <h2>New Environment</h2>
-        <p>All homes are updated and clean, worthy of your new, clean lifestyle</p>
-        <p>Onsite managers that live at the residence</p>
+        <h2>{data.GridComponents[2].Header}</h2>
+        {#each data.GridComponents[2].Paragraphs as paragraph, index}
+          <p>{paragraph.paragraph}</p>
+        {/each} 
       </div>
     </div>
 		<hr id="properties" />

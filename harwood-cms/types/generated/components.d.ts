@@ -1,5 +1,28 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SharedGridComponents extends Struct.ComponentSchema {
+  collectionName: 'components_shared_grid_components';
+  info: {
+    displayName: 'Grid components';
+    icon: 'bulletList';
+  };
+  attributes: {
+    Header: Schema.Attribute.String;
+    Paragraphs: Schema.Attribute.Component<'shared.paragraphs', true>;
+  };
+}
+
+export interface SharedH2Texts extends Struct.ComponentSchema {
+  collectionName: 'components_shared_h2_texts';
+  info: {
+    displayName: 'h2 texts';
+    icon: 'bulletList';
+  };
+  attributes: {
+    Text: Schema.Attribute.Text;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -8,6 +31,17 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
   attributes: {
     file: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+  };
+}
+
+export interface SharedParagraphs extends Struct.ComponentSchema {
+  collectionName: 'components_shared_paragraphs';
+  info: {
+    displayName: 'Paragraphs';
+    icon: 'archive';
+  };
+  attributes: {
+    paragraph: Schema.Attribute.Text;
   };
 }
 
@@ -43,11 +77,7 @@ export interface SharedSeo extends Struct.ComponentSchema {
     icon: 'allergies';
     name: 'Seo';
   };
-  attributes: {
-    metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
-    metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
-    shareImage: Schema.Attribute.Media<'images'>;
-  };
+  attributes: {};
 }
 
 export interface SharedSlider extends Struct.ComponentSchema {
@@ -97,7 +127,10 @@ export interface SharedTwoInputs extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.grid-components': SharedGridComponents;
+      'shared.h2-texts': SharedH2Texts;
       'shared.media': SharedMedia;
+      'shared.paragraphs': SharedParagraphs;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
