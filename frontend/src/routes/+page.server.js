@@ -5,6 +5,8 @@ export const load = async () => {
         query: {
             'populate[texts][populate]': '*',
             'populate[GridComponents][populate][Paragraphs][populate]': '*',
+            'populate[GridGallery][populate]': '*',
+            'populate[applynowsection][populate]': '*'
             },
         wrappedByKey: "data",
         wrappedByList: false

@@ -298,7 +298,7 @@
 <section data-color="white">
   <div class="cta-banner container">
     <h2 class="animated-line-heading animate-complete h2">
-      Let’s move things forward.
+      {data.applynowsection.text}
     </h2>
     <!-- <div class="long-text">
       <span class="long-text-span">
@@ -314,7 +314,7 @@
       >
     </div> -->
     <!-- <Link to="pdfEditor" id="pdfButton" class="cta-button">APPLY NOW!</Link> -->
-    <a href="/apply" id="pdfButton" class="btn">APPLY NOW!</a>
+    <a href="/apply" id="pdfButton" class="btn">{data.applynowsection.applynowbuttontext}</a>
   </div>
 </section>
 
