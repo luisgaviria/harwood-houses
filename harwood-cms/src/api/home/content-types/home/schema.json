@@ -29,6 +29,16 @@
       "type": "component",
       "component": "shared.grid-components",
       "repeatable": true
+    },
+    "GridGallery": {
+      "type": "component",
+      "component": "shared.grid-gallery",
+      "repeatable": true
+    },
+    "applynowsection": {
+      "type": "component",
+      "component": "shared.apply-now-section",
+      "repeatable": false
     }
   }
 }

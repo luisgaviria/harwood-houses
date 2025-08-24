@@ -1,5 +1,16 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SharedApplyNowSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_apply_now_sections';
+  info: {
+    displayName: 'ApplyNowSection';
+  };
+  attributes: {
+    applynowbuttontext: Schema.Attribute.String;
+    text: Schema.Attribute.String;
+  };
+}
+
 export interface SharedGridComponents extends Struct.ComponentSchema {
   collectionName: 'components_shared_grid_components';
   info: {
@@ -9,6 +20,23 @@ export interface SharedGridComponents extends Struct.ComponentSchema {
   attributes: {
     Header: Schema.Attribute.String;
     Paragraphs: Schema.Attribute.Component<'shared.paragraphs', true>;
+  };
+}
+
+export interface SharedGridGallery extends Struct.ComponentSchema {
+  collectionName: 'components_shared_grid_galleries';
+  info: {
+    displayName: 'GridGallery';
+  };
+  attributes: {
+    FrontImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    GalleryModal: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    TitleImage: Schema.Attribute.String;
   };
 }
 
@@ -127,7 +155,9 @@ export interface SharedTwoInputs extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.apply-now-section': SharedApplyNowSection;
       'shared.grid-components': SharedGridComponents;
+      'shared.grid-gallery': SharedGridGallery;
       'shared.h2-texts': SharedH2Texts;
       'shared.media': SharedMedia;
       'shared.paragraphs': SharedParagraphs;

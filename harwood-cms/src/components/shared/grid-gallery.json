@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_shared_grid_galleries",
+  "info": {
+    "displayName": "GridGallery"
+  },
+  "options": {},
+  "attributes": {
+    "FrontImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "TitleImage": {
+      "type": "string"
+    },
+    "GalleryModal": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

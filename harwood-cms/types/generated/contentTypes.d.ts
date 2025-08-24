@@ -574,10 +574,15 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    applynowsection: Schema.Attribute.Component<
+      'shared.apply-now-section',
+      false
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     GridComponents: Schema.Attribute.Component<'shared.grid-components', true>;
+    GridGallery: Schema.Attribute.Component<'shared.grid-gallery', true>;
     H1Text: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'> &

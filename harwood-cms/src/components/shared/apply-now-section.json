@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_apply_now_sections",
+  "info": {
+    "displayName": "ApplyNowSection"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "applynowbuttontext": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
