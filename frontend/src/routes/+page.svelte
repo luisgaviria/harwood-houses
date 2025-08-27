@@ -8,22 +8,19 @@
 
   const pdfUrl = '/files/HouseRules.pdf';
 
-  let showModal = {
-    lewis: false,
-    vernon: false,
-    hovey: false,
-    mapplewood: false,
-    hanover: false,
-    harwood: false,
-    breed: false
-  }
+  let showModal = [];
 
-  const onClickImg = (city) =>{
-    showModal = {...showModal, [city]: !showModal.city };
+  const onClickImg = (index) =>{
+    showModal[index] = true;
   };
 
   export let data;
+  for (let block of data.GridGallery){
+    showModal.push(false);
+  }
+  
   console.log(data);
+  const url="http://localhost:1337"
 </script>
 
 <svelte:head>
@@ -31,121 +28,21 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<Modal bind:showModal={showModal.lewis}>
-  <Splide aria-label="Carousel Lewis">
-    <SplideSlide>
-      <img src="/images/LEWIS-7.webp"  alt="Image 1"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/LEWIS-8.webp" alt="Image 2"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/LEWIS-9.webp"  alt="Image 3"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/LEWIS-10.webp"  alt="Image 4"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/LEWIS-11.webp"  alt="Image 5"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/LEWIS-12.webp" alt="Image 6"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/LEWIS-13.jpg" alt="Image 7"/>
-    </SplideSlide>
-  </Splide> 
-</Modal>
-
-<Modal bind:showModal={showModal.vernon}>
-  <img class="single-overlay" src="/images/12 Mt. Vernon St, Salem.webp" >
-</Modal>
-
-<Modal bind:showModal={showModal.hovey}>
-  <img class="single-overlay" src="/images/16 Hovey Terrace, Lynn.webp"/>
-</Modal>
-
-<Modal bind:showModal={showModal.mapplewood}>
-  <img class="single-overlay" src="/images/18 Maplewood St, Malden.webp"/>
-</Modal>
-
-<Modal bind:showModal={showModal.hanover}>
-  <Splide id="image-carousel" aria-label="Carousel Hanover">
-    <SplideSlide>
-      <img src="/images/HANOVER-1.webp"  alt="Image 1"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/HANOVER-2.webp"  alt="Image 2"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/HANOVER-3.webp"  alt="Image 3"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/HANOVER-4.webp"  alt="Image 4"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/HANOVER-5.webp"  alt="Image 5"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/HANOVER-6.webp"  alt="Image 6"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/HANOVER-7.webp"  alt="Image 7"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/HANOVER-8.webp"  alt="Image 8"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/HANOVER-9.webp"  alt="Image 9"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/HANOVER-10.webp"  alt="Image 10"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/HANOVER-11.webp"  alt="Image 11"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/HANOVER-12.webp"  alt="Image 12"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/HANOVER-13.webp"  alt="Image 13"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/HANOVER-14.webp"  alt="Image 14"/>
-    </SplideSlide>
-  </Splide> 
-</Modal>
-
-<Modal bind:showModal={showModal.harwood}>
-  <img class="single-overlay" src="/images/20 Harwood St, Lynn.webp"/>
-</Modal>
-
-<Modal bind:showModal={showModal.breed}>
-  <Splide aria-label="Carousel Breed">
-    <SplideSlide>
-      <img src="/images/BREED-2.webp"  alt="Image 1"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/BREED-3.webp"  alt="Image 2"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/BREED-4.webp"  alt="Image 3"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/BREED-5.webp"  alt="Image 4"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/BREED-6.webp"  alt="Image 5"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/BREED-7.webp"  alt="Image 5"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/BREED-8.webp"  alt="Image 5"/>
-    </SplideSlide>
-  </Splide> 
-</Modal>
-
+{#each data.GridGallery as block, index}
+  <Modal bind:showModal={showModal[index]} >
+    {#if block.GalleryModal.length == 1}
+      <img class="single-overlay" src={url+block.GalleryModal[0].url}/>
+    {:else}
+      <Splide aria-label={"Carousel "+block.name}>
+      {#each block.GalleryModal as gallery, index} 
+        <SplideSlide>
+        <img src={url+gallery.url}  alt={"Image "+index}/>
+        </SplideSlide>
+      {/each}
+      </Splide>
+    {/if}
+  </Modal>
+{/each}
 
 <section class="banner" data-color="white">
 	<div class="container banner-wrapper">
@@ -186,78 +83,17 @@
     <hr />
     <h2 class="our-properties">View Our Properties</h2>
     <div class="properties-grid">
-      <div class="item">
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <img
-          on:click={() => onClickImg("lewis")}
-          class="card-img expand"
-          src="/images/3 Lewis St, Lynn.webp"
-          alt="outside of the house"
-        />
-        <span class="inner-text">Lewis St, Lynn, MA</span>
-      </div>
-      <div class="item">
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <img
-          on:click={() =>
-            onClickImg("vernon")}
-          class="card-img expand"
-          src="/images/12 Mt. Vernon St, Salem.webp"
-          alt="outside of the house"
-        />
-        <span class="inner-text">Mt. Vernon St, Salem, MA</span>
-      </div>
-      <div class="item">
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <img
-          on:click={() => onClickImg("hovey")}
-          class="card-img expand"
-          src="/images/16 Hovey Terrace, Lynn.webp"
-          alt="outside of the house"
-        />
-        <span class="inner-text">Hovey Terrace, Lynn, MA</span>
-      </div>
-      <div class="item">
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <img
-          on:click={() =>
-            onClickImg("mapplewood")}
-          class="card-img expand"
-          src="/images/18 Maplewood St, Malden.webp"
-          alt="outside of the house"
-        />
-        <span class="inner-text">Maplewood St, Malden, MA</span>
-      </div>
-      <div class="item">
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <img
-          on:click={() => onClickImg("hanover")}
-          class="card-img expand"
-          src="/images/19 Hanover St, Lynn.webp"
-          alt="outside of the house"
-        />
-        <span class="inner-text expand">Hanover St, Lynn, MA</span>
-      </div>
-      <div class="item">
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <img
-          on:click={() => onClickImg("harwood")}
-          class="card-img expand"
-          src="/images/20 Harwood St, Lynn.webp"
-          alt="outside of the house"
-        />
-        <span class="inner-text expand">Harwood St, Lynn, MA</span>
-      </div>
-      <div class="item">
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <img
-          on:click={() => onClickImg("breed")}
-          class="card-img expand"
-          src="/images/61 Breed St, Lynn.webp"
-          alt="outside of the house"
-        />
-        <span class="inner-text expand">Breed St, Lynn, MA</span>
-      </div>
+      {#each data.GridGallery as block, index}
+        <div class="item">
+          <img
+            on:click={()=>onClickImg(index)}
+            class="card-img expand"
+            src={url+block.FrontImage.url}
+            alt="outside of the house"
+          />
+          <span class="inner-text">{block.TitleImage}</span>
+        </div>
+      {/each}
     </div>
   </div>
 </section>
@@ -300,20 +136,6 @@
     <h2 class="animated-line-heading animate-complete h2">
       {data.applynowsection.text}
     </h2>
-    <!-- <div class="long-text">
-      <span class="long-text-span">
-        All houses have an on-site washer and dryer, free wifi, and all
-        rooms are fully furnished.</span
-      >
-      <br />
-      <br />
-      <span class="long-text-span">
-        We offer both short and long term residency in a supportive, family
-        oriented sober atmosphere. All houses are close to public
-        transportation and have off street parking available.</span
-      >
-    </div> -->
-    <!-- <Link to="pdfEditor" id="pdfButton" class="cta-button">APPLY NOW!</Link> -->
     <a href="/apply" id="pdfButton" class="btn">{data.applynowsection.applynowbuttontext}</a>
   </div>
 </section>
