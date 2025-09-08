@@ -51,6 +51,38 @@ export interface SharedH2Texts extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedLeftfooter extends Struct.ComponentSchema {
+  collectionName: 'components_shared_leftfooters';
+  info: {
+    displayName: 'leftfooter';
+  };
+  attributes: {
+    menutitle: Schema.Attribute.Component<'shared.menutitle', true>;
+  };
+}
+
+export interface SharedLink extends Struct.ComponentSchema {
+  collectionName: 'components_shared_links';
+  info: {
+    displayName: 'link';
+  };
+  attributes: {
+    href: Schema.Attribute.String;
+    text: Schema.Attribute.String;
+  };
+}
+
+export interface SharedLinklinks extends Struct.ComponentSchema {
+  collectionName: 'components_shared_linklinks';
+  info: {
+    displayName: 'linklinks';
+  };
+  attributes: {
+    href: Schema.Attribute.String;
+    text: Schema.Attribute.String;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -59,6 +91,28 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
   attributes: {
     file: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+  };
+}
+
+export interface SharedMenutitle extends Struct.ComponentSchema {
+  collectionName: 'components_shared_menutitles';
+  info: {
+    displayName: 'menutitle';
+  };
+  attributes: {
+    link: Schema.Attribute.Component<'shared.link', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedMenutitlelinks extends Struct.ComponentSchema {
+  collectionName: 'components_shared_menutitlelinks';
+  info: {
+    displayName: 'menutitlelinks';
+  };
+  attributes: {
+    link: Schema.Attribute.Component<'shared.linklinks', true>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -94,6 +148,16 @@ export interface SharedRichText extends Struct.ComponentSchema {
   };
   attributes: {
     body: Schema.Attribute.RichText;
+  };
+}
+
+export interface SharedRightfooter extends Struct.ComponentSchema {
+  collectionName: 'components_shared_rightfooters';
+  info: {
+    displayName: 'rightfooter';
+  };
+  attributes: {
+    menutitle: Schema.Attribute.Component<'shared.menutitlelinks', true>;
   };
 }
 
@@ -159,10 +223,16 @@ declare module '@strapi/strapi' {
       'shared.grid-components': SharedGridComponents;
       'shared.grid-gallery': SharedGridGallery;
       'shared.h2-texts': SharedH2Texts;
+      'shared.leftfooter': SharedLeftfooter;
+      'shared.link': SharedLink;
+      'shared.linklinks': SharedLinklinks;
       'shared.media': SharedMedia;
+      'shared.menutitle': SharedMenutitle;
+      'shared.menutitlelinks': SharedMenutitlelinks;
       'shared.paragraphs': SharedParagraphs;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
+      'shared.rightfooter': SharedRightfooter;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
       'shared.title-and-input-placeholder-text': SharedTitleAndInputPlaceholderText;

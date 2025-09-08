@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_menutitlelinks",
+  "info": {
+    "displayName": "menutitlelinks"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "link": {
+      "type": "component",
+      "component": "shared.linklinks",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

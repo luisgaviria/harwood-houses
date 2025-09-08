@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_rightfooters",
+  "info": {
+    "displayName": "rightfooter"
+  },
+  "options": {},
+  "attributes": {
+    "menutitle": {
+      "type": "component",
+      "component": "shared.menutitlelinks",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

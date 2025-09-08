@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "layouts",
+  "info": {
+    "singularName": "layout",
+    "pluralName": "layouts",
+    "displayName": "Layout"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "leftfooter": {
+      "type": "component",
+      "component": "shared.leftfooter",
+      "repeatable": false
+    },
+    "rightfooter": {
+      "type": "component",
+      "component": "shared.rightfooter",
+      "repeatable": false
+    }
+  }
+}

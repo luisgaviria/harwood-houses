@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_leftfooters",
+  "info": {
+    "displayName": "leftfooter"
+  },
+  "options": {},
+  "attributes": {
+    "menutitle": {
+      "type": "component",
+      "component": "shared.menutitle",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

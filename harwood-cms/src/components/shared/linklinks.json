@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_linklinks",
+  "info": {
+    "displayName": "linklinks"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

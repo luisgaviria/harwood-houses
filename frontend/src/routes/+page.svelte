@@ -19,7 +19,6 @@
     showModal.push(false);
   }
   
-  console.log(data);
   const url="http://localhost:1337"
 </script>
 

@@ -1,5 +1,11 @@
-<script>import Header from './Header.svelte';
-import '../app.css';</script>
+<script>
+import Header from './Header.svelte';
+import '../app.css';
+
+export let data;
+console.log(data);
+
+</script>
 
 <div class="app">
 	<Header></Header>
@@ -14,49 +20,34 @@ import '../app.css';</script>
 			<hr />
 			<div class="left-right">
 				<div class="left text-footer-links">
-					<div id="block-7" class="menu widget_block">
-						<div class="menu-title">Social</div>
-						<div class="wp-widget-group__inner-blocks">
-							<ul>
-								<!-- <li class="no-list-style">
-									<a href="#" target="_blank" rel="noreferrer noopener">Instagram</a>
-								</li> -->
-								<!-- <li class="no-list-style">
-									<a href="#" target="_blank" rel="noreferrer noopener">Twitter</a>
-								</li> -->
-								<!-- <li class="no-list-style">
-									<a href="#" target="_blank" rel="noreferrer noopener">LinkedIn</a>
-								</li> -->
-								<li class="no-list-style">
-									<a href="https://www.facebook.com/harwood.houses/" target="_blank" rel="noreferrer noopener">Facebook</a>
+          {#each data.leftfooter.menutitle as block, index}
+          <div id={"block-"+index} class="menu widget_block">
+            <div class="menu-title">{block.title}</div>
+            <div class="wp-widget-group__inner-blocks">
+              <ul>
+                {#each block.link as blocklink,index2}
+                                <li class="no-list-style">
+									<a href={blocklink.href} target="_blank" rel="noreferrer noopener">{blocklink.text}</a>
 								</li>
+                {/each}
+
 							</ul>
-						</div>
-					</div>
-					<div id="block-8" class="menu widget_block">
-						<div class="menu-title">Info</div>
-						<div class="wp-widget-group__inner-blocks">
-							<ul>
-								<li class="no-list-style"><a href="/about">About</a></li>
-								 <li class="no-list-style">
-									<a href="/files/HouseRules.pdf" data-type="URL">Rules</a>
-								</li> 
-							</ul>
-						</div>
-					</div>
+            </div>
+          </div>
+          {/each}
 				</div>
 		
 				<div class="right text-footer-links">
-					<div id="block-9" class="menu widget_block">
-						<div class="menu-title">Phone</div>
+          {#each data.rightfooter.menutitle as block, index}
+           <div id={"block-"+index} class="menu widget_block">
+						<div class="menu-title">{block.title}</div>
 						<div class="wp-widget-group__inner-blocks">
-							<a href="tel:+1(781)-226-7009" class="text-footer-links">781-226-7009</a>
-							<br />
-							<a href="mailto: HarwoodHouses@gmail.com" style="color: #151515">
-								Email
-							</a>
+							{#each block.link as blocklink,index2}
+                <a href={blocklink.href} class="text-footer-links">{blocklink.text}</a>
+              {/each}
 						</div>
 					</div>
+          {/each}
 				</div>
 			</div>
 		</footer>
