@@ -109,18 +109,33 @@
   };
 
   export let data; // we get it straight from +page.server.js
+  import { placeholderApplyText } from '$lib/utils/placeholder.js';
 </script>
 
 <div class="container">
   <div class="columnLeft">
+    {#if data.title}
     <h2 class="columnLeftH2">{data.title}</h2>
+    {:else}
+    <h2 class="columnLeftH2">{placeholderApplyText}</h2>
+    {/if}
+    {#if data.subTitle}
     <p class="mktP">
     {data.subTitle}
     </p>
+    {:else}
+    <p class="mktP">
+    {placeholderApplyText}
+    </p>
+    {/if}
     <div class="form-container">
       <form on:submit|preventDefault={onSubmit}>
         <fieldset>
+          {#if data.TwoInputsBlock}
           <legend>{data.TwoInputsBlock.Title}</legend>
+          {:else}
+          <legend>{placeholderApplyText}</legend>
+          {/if}
           <div class="form-group">
             <label for="smoke-policy"
               >I read and agree to the smoke-free facility policy. <span

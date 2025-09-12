@@ -3,6 +3,7 @@
 	import welcome_fallback from '$lib/images/svelte-welcome.png';
   import Modal from "../components/Modal.svelte";
   import { Splide, SplideSlide } from '@splidejs/svelte-splide';
+  import {placeholderHomeText} from '$lib/utils/placeholder.js';
   import '@splidejs/svelte-splide/css';
 
 
@@ -15,18 +16,28 @@
   };
 
   export let data;
+  if(data.GridGallery){
   for (let block of data.GridGallery){
     showModal.push(false);
   }
+  }
+
   
   const url="http://localhost:1337"
+
+  console.log(data);
 </script>
 
 <svelte:head>
-	<title>{data.titleOfSiteTab}</title>
+  {#if data.titleOfSiteTab }
+	<title>{data.titleOfSiteTab}</title> 
+  {:else}
+    <title>{placeholderHomeText}</title>
+  {/if}
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
+{#if data.GridGallery}
 {#each data.GridGallery as block, index}
   <Modal bind:showModal={showModal[index]} >
     {#if block.GalleryModal.length == 1}
@@ -42,6 +53,21 @@
     {/if}
   </Modal>
 {/each}
+{:else}
+  <Modal showModal={false} >
+    <Splide>
+      <SplideSlide>
+        <img src="https://placehold.co/600x400/png"  alt="Placeholder image 1"/>
+      </SplideSlide>
+      <SplideSlide>
+        <img src="https://placehold.co/600x400/png"  alt="Placeholder image 2"/>
+      </SplideSlide>
+      <SplideSlide>
+        <img src="https://placehold.co/600x400/png"  alt="Placeholder image 3"/>
+      </SplideSlide>
+    </Splide>
+  </Modal>
+{/if}
 
 <section class="banner" data-color="white">
 	<div class="container banner-wrapper">
@@ -50,21 +76,34 @@
 			<img src={welcome_fallback} alt="Welcome" />
 		</picture>
 	</div>
+  {#if data.title}
 	<h1>
 {data.title}
 	</h1>
+  {:else}
+    <h1>
+      {placeholderHomeText}
+    </h1>
+  {/if}
 	<a href="/apply" id="pdfButton" class="btn">APPLY NOW!</a>
 </section>
 <section class="text-section" data-color="white">
 	<div class="container">
     <hr />
 		<div class="long-text-title">
+      {#if data.H1Text}
 			<span class="long-text-span span-title">
         {data.H1Text}
 			</span>
+      {:else}
+      <span class="long-text-span span-title">
+        {placeholderHomeText}
+      </span>
+      {/if}
       <br />
 			<br />
       <br />
+      {#if data.texts}
       {#each data.texts as block, index}
       <span class="long-text-span">
         {block.Text}
@@ -72,6 +111,11 @@
       <br/>
       <br/>
       {/each} 
+      {:else}
+      <span class="long-text-span">
+        {placeholderHomeText}
+      </span>
+      {/if}
 		</div>
 	</div>
 </section>
@@ -82,6 +126,7 @@
     <hr />
     <h2 class="our-properties">View Our Properties</h2>
     <div class="properties-grid">
+      {#if data.GridGallery}
       {#each data.GridGallery as block, index}
         <div class="item">
           <img
@@ -93,6 +138,16 @@
           <span class="inner-text">{block.TitleImage}</span>
         </div>
       {/each}
+      {:else}
+        <div class="item">
+          <img
+            class="card-img expand"
+            src="https://placehold.co/600x400/png"
+            alt="Placeholder image"
+          />
+          <span class="inner-text">{placeholderHomeText}</span>
+        </div>
+      {/if}
     </div>
   </div>
 </section>
@@ -100,6 +155,7 @@
 <section class="three-column-cards" data-color="white">
 	<div class="container">
 		<hr />
+    {#if data.GridComponents}
 		<div class="three-column-grid">
       <div class="item">
         <h2>{data.GridComponents[0].Header}</h2>
@@ -126,16 +182,49 @@
         {/each} 
       </div>
     </div>
+    {:else}
+      <div class="three-column-grid">
+        <div class="item">
+          <h2>{placeholderHomeText}</h2>
+          <p>{placeholderHomeText}</p>
+          <div class="cta-text">
+            <a href={pdfUrl}  
+            style="cursor: pointer;" target="_blank" rel="noopener noreferrer">SEE RULES</a>
+          </div>
+        </div>
+        <div class="item">
+          <div class="text-wrapper">
+          <h2>{placeholderHomeText}</h2>
+          <p>{placeholderHomeText}</p>
+          </div>
+        </div>
+        <div class="item">
+          <h2>{placeholderHomeText}</h2>
+          <p>{placeholderHomeText}</p>
+        </div>
+      </div>
+    {/if}
+
 		<hr id="properties" />
 	</div>
 </section>
 
 <section data-color="white">
   <div class="cta-banner container">
+    {#if data.applynowsection}
     <h2 class="animated-line-heading animate-complete h2">
       {data.applynowsection.text}
     </h2>
+    {:else}
+    <h2 class="animated-line-heading animate-complete h2">
+      {placeholderHomeText}
+    </h2>
+    {/if}
+    {#if data.applynowsection}
     <a href="/apply" id="pdfButton" class="btn">{data.applynowsection.applynowbuttontext}</a>
+    {:else}   
+    <a href="/apply" id="pdfButton" class="btn">{placeholderHomeText}</a>
+    {/if}
   </div>
 </section>
 
