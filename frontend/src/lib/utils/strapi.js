@@ -16,7 +16,7 @@ export default async function fetchApi({
     endpoint = endpoint.slice(1);
   }
 
-  const url = new URL(`http://localhost:1337/api/${endpoint}`);
+  const url = new URL(`https://sheltered-savannah-59783-268bc7c9a37b.herokuapp.com/api/${endpoint}`);
 
   if (query) {
     Object.entries(query).forEach(([key, value]) => {
