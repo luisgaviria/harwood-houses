@@ -22,9 +22,6 @@
   }
   }
 
-  
-  const url="http://localhost:1337"
-
   console.log(data);
 </script>
 
@@ -41,12 +38,12 @@
 {#each data.GridGallery as block, index}
   <Modal bind:showModal={showModal[index]} >
     {#if block.GalleryModal.length == 1}
-      <img class="single-overlay" src={url+block.GalleryModal[0].url}/>
+      <img class="single-overlay" src={block.GalleryModal[0].url}/>
     {:else}
       <Splide aria-label={"Carousel "+block.name}>
       {#each block.GalleryModal as gallery, index} 
         <SplideSlide>
-        <img src={url+gallery.url}  alt={"Image "+index}/>
+        <img src={gallery.url}  alt={"Image "+index}/>
         </SplideSlide>
       {/each}
       </Splide>
@@ -132,7 +129,7 @@
           <img
             on:click={()=>onClickImg(index)}
             class="card-img expand"
-            src={url+block.FrontImage.url}
+            src={block.FrontImage.url}
             alt="outside of the house"
           />
           <span class="inner-text">{block.TitleImage}</span>
