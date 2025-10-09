@@ -1,7 +1,14 @@
-import { json } from '@sveltejs/kit';
-import Mailgun from 'mailgun.js';
-import FormData from 'form-data';
-import {MAILGUN_API_KEY,MAILGUN_API_DOMAIN,MAIL_TO_EMAILS_1,MAIL_TO_EMAILS,MAIL_TO_EMAILS_2} from "$env/static/private";
+import { json } from "@sveltejs/kit";
+import Mailgun from "mailgun.js";
+import FormData from "form-data";
+import {
+  MAILGUN_API_KEY,
+  MAILGUN_API_DOMAIN,
+  MAIL_TO_EMAILS_1,
+  MAIL_TO_EMAILS,
+  MAIL_TO_EMAILS_2,
+  MAIL_TO_EMAILS_3,
+} from "$env/static/private";
 
 export const POST = async({request}) => {
     const data = await request.formData();
