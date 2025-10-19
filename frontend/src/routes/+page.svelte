@@ -3,148 +3,68 @@
 	import welcome_fallback from '$lib/images/svelte-welcome.png';
   import Modal from "../components/Modal.svelte";
   import { Splide, SplideSlide } from '@splidejs/svelte-splide';
+  import {placeholderHomeText} from '$lib/utils/placeholder.js';
   import '@splidejs/svelte-splide/css';
 
 
   const pdfUrl = '/files/HouseRules.pdf';
 
-  let showModal = {
-    lewis: false,
-    vernon: false,
-    hovey: false,
-    mapplewood: false,
-    hanover: false,
-    harwood: false,
-    breed: false
-  }
+  let showModal = [];
 
-  const onClickImg = (city) =>{
-    showModal = {...showModal, [city]: !showModal.city };
+  const onClickImg = (index) =>{
+    showModal[index] = true;
   };
 
+  export let data;
+  if(data.GridGallery){
+  for (let block of data.GridGallery){
+    showModal.push(false);
+  }
+  }
 
+  console.log(data);
 </script>
 
 <svelte:head>
-	<title>Home</title>
+  {#if data.titleOfSiteTab }
+	<title>{data.titleOfSiteTab}</title> 
+  {:else}
+    <title>{placeholderHomeText}</title>
+  {/if}
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<Modal bind:showModal={showModal.lewis}>
-  <Splide aria-label="Carousel Lewis">
-    <SplideSlide>
-      <img src="/images/LEWIS-7.webp"  alt="Image 1"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/LEWIS-8.webp" alt="Image 2"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/LEWIS-9.webp"  alt="Image 3"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/LEWIS-10.webp"  alt="Image 4"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/LEWIS-11.webp"  alt="Image 5"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/LEWIS-12.webp" alt="Image 6"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/LEWIS-13.jpg" alt="Image 7"/>
-    </SplideSlide>
-  </Splide> 
-</Modal>
-
-<Modal bind:showModal={showModal.vernon}>
-  <img class="single-overlay" src="/images/12 Mt. Vernon St, Salem.webp" >
-</Modal>
-
-<Modal bind:showModal={showModal.hovey}>
-  <img class="single-overlay" src="/images/16 Hovey Terrace, Lynn.webp"/>
-</Modal>
-
-<Modal bind:showModal={showModal.mapplewood}>
-  <img class="single-overlay" src="/images/18 Maplewood St, Malden.webp"/>
-</Modal>
-
-<Modal bind:showModal={showModal.hanover}>
-  <Splide id="image-carousel" aria-label="Carousel Hanover">
-    <SplideSlide>
-      <img src="/images/HANOVER-1.webp"  alt="Image 1"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/HANOVER-2.webp"  alt="Image 2"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/HANOVER-3.webp"  alt="Image 3"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/HANOVER-4.webp"  alt="Image 4"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/HANOVER-5.webp"  alt="Image 5"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/HANOVER-6.webp"  alt="Image 6"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/HANOVER-7.webp"  alt="Image 7"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/HANOVER-8.webp"  alt="Image 8"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/HANOVER-9.webp"  alt="Image 9"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/HANOVER-10.webp"  alt="Image 10"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/HANOVER-11.webp"  alt="Image 11"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/HANOVER-12.webp"  alt="Image 12"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/HANOVER-13.webp"  alt="Image 13"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/HANOVER-14.webp"  alt="Image 14"/>
-    </SplideSlide>
-  </Splide> 
-</Modal>
-
-<Modal bind:showModal={showModal.harwood}>
-  <img class="single-overlay" src="/images/20 Harwood St, Lynn.webp"/>
-</Modal>
-
-<Modal bind:showModal={showModal.breed}>
-  <Splide aria-label="Carousel Breed">
-    <SplideSlide>
-      <img src="/images/BREED-2.webp"  alt="Image 1"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/BREED-3.webp"  alt="Image 2"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/BREED-4.webp"  alt="Image 3"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/BREED-5.webp"  alt="Image 4"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/BREED-6.webp"  alt="Image 5"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/BREED-7.webp"  alt="Image 5"/>
-    </SplideSlide>
-    <SplideSlide>
-      <img src="/images/BREED-8.webp"  alt="Image 5"/>
-    </SplideSlide>
-  </Splide> 
-</Modal>
-
+{#if data.GridGallery}
+{#each data.GridGallery as block, index}
+  <Modal bind:showModal={showModal[index]} >
+    {#if block.GalleryModal.length == 1}
+      <img class="single-overlay" src={block.GalleryModal[0].url}/>
+    {:else}
+      <Splide aria-label={"Carousel "+block.name}>
+      {#each block.GalleryModal as gallery, index} 
+        <SplideSlide>
+        <img src={gallery.url}  alt={"Image "+index}/>
+        </SplideSlide>
+      {/each}
+      </Splide>
+    {/if}
+  </Modal>
+{/each}
+{:else}
+  <Modal showModal={false} >
+    <Splide>
+      <SplideSlide>
+        <img src="https://placehold.co/600x400/png"  alt="Placeholder image 1"/>
+      </SplideSlide>
+      <SplideSlide>
+        <img src="https://placehold.co/600x400/png"  alt="Placeholder image 2"/>
+      </SplideSlide>
+      <SplideSlide>
+        <img src="https://placehold.co/600x400/png"  alt="Placeholder image 3"/>
+      </SplideSlide>
+    </Splide>
+  </Modal>
+{/if}
 
 <section class="banner" data-color="white">
 	<div class="container banner-wrapper">
@@ -153,35 +73,46 @@
 			<img src={welcome_fallback} alt="Welcome" />
 		</picture>
 	</div>
+  {#if data.title}
 	<h1>
-		Begin your journey in recovery at the North Shore's best sober living
-		residences!
+{data.title}
 	</h1>
+  {:else}
+    <h1>
+      {placeholderHomeText}
+    </h1>
+  {/if}
 	<a href="/apply" id="pdfButton" class="btn">APPLY NOW!</a>
 </section>
 <section class="text-section" data-color="white">
 	<div class="container">
     <hr />
 		<div class="long-text-title">
+      {#if data.H1Text}
 			<span class="long-text-span span-title">
-				The HarwoodHouses offer those in early recovery an exceptional
-				opportunity to begin rebuilding their life in modern, clean, well
-				equipped sober homes in Lynn, Malden and Salem.
+        {data.H1Text}
 			</span>
+      {:else}
+      <span class="long-text-span span-title">
+        {placeholderHomeText}
+      </span>
+      {/if}
       <br />
 			<br />
       <br />
-			<span class="long-text-span">
-				All houses have an on-site washer and dryer, free wifi, and all
-				rooms are fully furnished.</span
-			>
-			<br />
-			<br />
-			<span class="long-text-span">
-				We offer both short and long term residency in a supportive, family
-				oriented sober atmosphere. All houses are close to public
-				transportation and have off street parking available.</span
-			>
+      {#if data.texts}
+      {#each data.texts as block, index}
+      <span class="long-text-span">
+        {block.Text}
+      </span>
+      <br/>
+      <br/>
+      {/each} 
+      {:else}
+      <span class="long-text-span">
+        {placeholderHomeText}
+      </span>
+      {/if}
 		</div>
 	</div>
 </section>
@@ -192,78 +123,28 @@
     <hr />
     <h2 class="our-properties">View Our Properties</h2>
     <div class="properties-grid">
-      <div class="item">
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <img
-          on:click={() => onClickImg("lewis")}
-          class="card-img expand"
-          src="/images/3 Lewis St, Lynn.webp"
-          alt="outside of the house"
-        />
-        <span class="inner-text">Lewis St, Lynn, MA</span>
-      </div>
-      <div class="item">
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <img
-          on:click={() =>
-            onClickImg("vernon")}
-          class="card-img expand"
-          src="/images/12 Mt. Vernon St, Salem.webp"
-          alt="outside of the house"
-        />
-        <span class="inner-text">Mt. Vernon St, Salem, MA</span>
-      </div>
-      <div class="item">
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <img
-          on:click={() => onClickImg("hovey")}
-          class="card-img expand"
-          src="/images/16 Hovey Terrace, Lynn.webp"
-          alt="outside of the house"
-        />
-        <span class="inner-text">Hovey Terrace, Lynn, MA</span>
-      </div>
-      <div class="item">
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <img
-          on:click={() =>
-            onClickImg("mapplewood")}
-          class="card-img expand"
-          src="/images/18 Maplewood St, Malden.webp"
-          alt="outside of the house"
-        />
-        <span class="inner-text">Maplewood St, Malden, MA</span>
-      </div>
-      <div class="item">
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <img
-          on:click={() => onClickImg("hanover")}
-          class="card-img expand"
-          src="/images/19 Hanover St, Lynn.webp"
-          alt="outside of the house"
-        />
-        <span class="inner-text expand">Hanover St, Lynn, MA</span>
-      </div>
-      <div class="item">
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <img
-          on:click={() => onClickImg("harwood")}
-          class="card-img expand"
-          src="/images/20 Harwood St, Lynn.webp"
-          alt="outside of the house"
-        />
-        <span class="inner-text expand">Harwood St, Lynn, MA</span>
-      </div>
-      <div class="item">
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <img
-          on:click={() => onClickImg("breed")}
-          class="card-img expand"
-          src="/images/61 Breed St, Lynn.webp"
-          alt="outside of the house"
-        />
-        <span class="inner-text expand">Breed St, Lynn, MA</span>
-      </div>
+      {#if data.GridGallery}
+      {#each data.GridGallery as block, index}
+        <div class="item">
+          <img
+            on:click={()=>onClickImg(index)}
+            class="card-img expand"
+            src={block.FrontImage.url}
+            alt="outside of the house"
+          />
+          <span class="inner-text">{block.TitleImage}</span>
+        </div>
+      {/each}
+      {:else}
+        <div class="item">
+          <img
+            class="card-img expand"
+            src="https://placehold.co/600x400/png"
+            alt="Placeholder image"
+          />
+          <span class="inner-text">{placeholderHomeText}</span>
+        </div>
+      {/if}
     </div>
   </div>
 </section>
@@ -271,11 +152,13 @@
 <section class="three-column-cards" data-color="white">
 	<div class="container">
 		<hr />
+    {#if data.GridComponents}
 		<div class="three-column-grid">
       <div class="item">
-        <h2>Clean Living</h2>
-        <p>Zero Tolerance for Drugs and Alcohol</p>
-        <p>Twice weekly mandatory drug testing to maintain a 100% sober environment</p>
+        <h2>{data.GridComponents[0].Header}</h2>
+        {#each data.GridComponents[0].Paragraphs as paragraph, index}
+          <p>{paragraph.paragraph}</p>
+        {/each} 
         <div class="cta-text">
           <a href={pdfUrl}  
 					style="cursor: pointer;" target="_blank" rel="noopener noreferrer">SEE RULES</a>
@@ -283,41 +166,62 @@
       </div>
       <div class="item">
         <div class="text-wrapper">
-          <h2>Personal Responsibility</h2>
-          <p>Recovery meetings of choice are required</p>
-          <p>Household participation through chores and meetings</p>
+        <h2>{data.GridComponents[1].Header}</h2>
+        {#each data.GridComponents[1].Paragraphs as paragraph, index}
+          <p>{paragraph.paragraph}</p>
+        {/each} 
         </div>
       </div>
       <div class="item">
-        <h2>New Environment</h2>
-        <p>All homes are updated and clean, worthy of your new, clean lifestyle</p>
-        <p>Onsite managers that live at the residence</p>
+        <h2>{data.GridComponents[2].Header}</h2>
+        {#each data.GridComponents[2].Paragraphs as paragraph, index}
+          <p>{paragraph.paragraph}</p>
+        {/each} 
       </div>
     </div>
+    {:else}
+      <div class="three-column-grid">
+        <div class="item">
+          <h2>{placeholderHomeText}</h2>
+          <p>{placeholderHomeText}</p>
+          <div class="cta-text">
+            <a href={pdfUrl}  
+            style="cursor: pointer;" target="_blank" rel="noopener noreferrer">SEE RULES</a>
+          </div>
+        </div>
+        <div class="item">
+          <div class="text-wrapper">
+          <h2>{placeholderHomeText}</h2>
+          <p>{placeholderHomeText}</p>
+          </div>
+        </div>
+        <div class="item">
+          <h2>{placeholderHomeText}</h2>
+          <p>{placeholderHomeText}</p>
+        </div>
+      </div>
+    {/if}
+
 		<hr id="properties" />
 	</div>
 </section>
 
 <section data-color="white">
   <div class="cta-banner container">
+    {#if data.applynowsection}
     <h2 class="animated-line-heading animate-complete h2">
-      Let’s move things forward.
+      {data.applynowsection.text}
     </h2>
-    <!-- <div class="long-text">
-      <span class="long-text-span">
-        All houses have an on-site washer and dryer, free wifi, and all
-        rooms are fully furnished.</span
-      >
-      <br />
-      <br />
-      <span class="long-text-span">
-        We offer both short and long term residency in a supportive, family
-        oriented sober atmosphere. All houses are close to public
-        transportation and have off street parking available.</span
-      >
-    </div> -->
-    <!-- <Link to="pdfEditor" id="pdfButton" class="cta-button">APPLY NOW!</Link> -->
-    <a href="/apply" id="pdfButton" class="btn">APPLY NOW!</a>
+    {:else}
+    <h2 class="animated-line-heading animate-complete h2">
+      {placeholderHomeText}
+    </h2>
+    {/if}
+    {#if data.applynowsection}
+    <a href="/apply" id="pdfButton" class="btn">{data.applynowsection.applynowbuttontext}</a>
+    {:else}   
+    <a href="/apply" id="pdfButton" class="btn">{placeholderHomeText}</a>
+    {/if}
   </div>
 </section>
 
