@@ -21,8 +21,6 @@
     showModal.push(false);
   }
   }
-
-  console.log(data);
 </script>
 
 <svelte:head>
