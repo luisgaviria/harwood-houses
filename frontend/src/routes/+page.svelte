@@ -67,8 +67,8 @@
 <section class="banner" data-color="white">
 	<div class="container banner-wrapper">
 		<picture>
-			<source srcset={bannerImage} type="image/webp" />
-			<img src={welcome_fallback} alt="Welcome" />
+			<source srcset={bannerImage} type="image/webp"/>
+			<img src={welcome_fallback} alt="Welcome" fetchpriority="high"/>
 		</picture>
 	</div>
   {#if data.title}
