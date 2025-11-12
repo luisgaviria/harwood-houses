@@ -41,7 +41,7 @@
       <Splide aria-label={"Carousel "+block.name}>
       {#each block.GalleryModal as gallery, index} 
         <SplideSlide>
-        <img src={gallery.url}  alt={"Image "+index}/>
+        <img src={gallery.url} alt={"Image "+index} loading="lazy"/>
         </SplideSlide>
       {/each}
       </Splide>
@@ -52,13 +52,13 @@
   <Modal showModal={false} >
     <Splide>
       <SplideSlide>
-        <img src="https://placehold.co/600x400/png"  alt="Placeholder image 1"/>
+        <img src="https://placehold.co/600x400/png"  alt="Placeholder image 1" loading="lazy"/>
       </SplideSlide>
       <SplideSlide>
-        <img src="https://placehold.co/600x400/png"  alt="Placeholder image 2"/>
+        <img src="https://placehold.co/600x400/png"  alt="Placeholder image 2" loading="lazy"/>
       </SplideSlide>
       <SplideSlide>
-        <img src="https://placehold.co/600x400/png"  alt="Placeholder image 3"/>
+        <img src="https://placehold.co/600x400/png"  alt="Placeholder image 3" loading="lazy"/>
       </SplideSlide>
     </Splide>
   </Modal>
@@ -129,6 +129,7 @@
             class="card-img expand"
             src={block.FrontImage.url}
             alt="outside of the house"
+            loading="lazy"
           />
           <span class="inner-text">{block.TitleImage}</span>
         </div>
@@ -139,6 +140,7 @@
             class="card-img expand"
             src="https://placehold.co/600x400/png"
             alt="Placeholder image"
+            loading="lazy"
           />
           <span class="inner-text">{placeholderHomeText}</span>
         </div>
