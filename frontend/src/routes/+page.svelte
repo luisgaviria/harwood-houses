@@ -5,22 +5,14 @@
   import { Splide, SplideSlide } from '@splidejs/svelte-splide';
   import {placeholderHomeText} from '$lib/utils/placeholder.js';
   import '@splidejs/svelte-splide/css';
-
-
   const pdfUrl = '/files/HouseRules.pdf';
-
-  let showModal = [];
 
   const onClickImg = (index) =>{
     showModal[index] = true;
   };
 
   export let data;
-  if(data.GridGallery){
-  for (let block of data.GridGallery){
-    showModal.push(false);
-  }
-  }
+  const showModal = data.GridGallery ? data.GridGallery.map(() => false) : [false];
 </script>
 
 <svelte:head>
@@ -130,6 +122,7 @@
             src={block.FrontImage.url}
             alt="outside of the house"
             loading="lazy"
+            decoding="async"
           />
           <span class="inner-text">{block.TitleImage}</span>
         </div>
@@ -371,12 +364,8 @@ h1 {
   margin-bottom: 1rem; 
 }
 
-	.long-text-span {
-  min-width: 600px;
+.long-text-span {
   font-family: "Questrial", sans-serif;
-  opacity: 1;
-  transform-origin: 527.844px 50.0703px;
-  transform: translate(0px, 0%);
   color: #151515;
   font-size: 24px;
 }
@@ -415,7 +404,7 @@ h1 {
 @media (max-width: 768px) {
   /*breakpoint*/
   .three-column-grid {
-    grid-template-columns: none;
+    grid-template-columns: 1fr; /* Changed from 'none' */
   }
 }
 
@@ -522,12 +511,7 @@ p {
 
 .inner-text {
   margin-top: 1rem;
-  /* padding-left: 2rem; */
-  min-width: 600px;
   font-family: "Questrial", sans-serif;
-  opacity: 1;
-  transform-origin: 527.844px 50.0703px;
-  transform: translate(0px, 0%);
   color: #151515;
   font-size: 24px;
   transition: all 0.6s ease;

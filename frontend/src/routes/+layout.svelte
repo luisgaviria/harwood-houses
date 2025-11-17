@@ -2,8 +2,22 @@
   import Header from "./Header.svelte";
   import { placeholderLayoutText } from "$lib/utils/placeholder.js";
   import "../app.css";
+  import { page } from '$app/stores';
+  import { beforeNavigate, afterNavigate } from '$app/navigation';
+    import { startProgress, completeProgress } from "$lib/nprogress/progress.js";
+
 
   export let data;
+  // Start progress when navigation begins
+  beforeNavigate(() => {
+    startProgress();
+  });
+
+  // Complete progress when navigation finishes
+  afterNavigate(() => {
+    completeProgress();
+  });
+
   console.log(data);
 </script>
 

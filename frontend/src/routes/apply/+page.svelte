@@ -1,6 +1,5 @@
 <script>
   import axios from "axios";
-
   let firstName = "";
   let lastName = "";
   let telephoneNumber = "";
@@ -10,7 +9,6 @@
 
   export let data; 
   console.log(data.apply);
-  
   const onSubmit = async (event) => {
     event.preventDefault(); // Prevent form refresh
 
@@ -328,7 +326,6 @@
   font-size: 16px;
   margin: 0;
   outline: none;
-  cursor: pointer;
   -webkit-box-shadow: none;
   box-shadow: none;
   border-radius: 50px;
@@ -350,7 +347,6 @@
   font-size: 16px;
   margin: 0;
   outline: none;
-  cursor: pointer;
   -webkit-box-shadow: none;
   box-shadow: none;
   border-radius: 20px;
