@@ -103,6 +103,12 @@
                   </div>
                 </div>
               </div>
+          
+              <div style="max-width: 400px; margin: 0 auto; padding: 10px 20px;">
+                <p style="font-size: 11px; color: white; text-align: center; line-height: 1.4; opacity: 0.8; margin: 0;">
+                  By providing your phone number, you agree to receive text messages from Harwood Houses. Message and data rates may apply. Message frequency varies. Reply STOP to opt-out, HELP for help. View our <a href="/privacy-policy" style="color: white; text-decoration: underline;">Privacy Policy</a>.
+                </p>
+              </div>
 
               <div class="mktButtonRow">
                 <span class="mktButtonSpan">
