@@ -104,9 +104,12 @@
                 </div>
               </div>
           
-              <div style="max-width: 400px; margin: 0 auto; padding: 10px 20px;">
-                <p style="font-size: 11px; color: white; text-align: center; line-height: 1.4; opacity: 0.8; margin: 0;">
-                  By providing your phone number, you agree to receive text messages from Harwood Houses. Message and data rates may apply. Message frequency varies. Reply STOP to opt-out, HELP for help. View our <a href="/privacy-policy" style="color: white; text-decoration: underline;">Privacy Policy</a>.
+              <div style="padding: 0 50px 15px 50px; text-align: center;">
+                <p style="font-size: 11px; color: #ffffff; line-height: 1.4; margin: 0 auto; max-width: 450px; opacity: 0.9; font-family: sans-serif;">
+                  By providing your phone number, you agree to receive text messages from Harwood Houses. 
+                  Message and data rates may apply. Message frequency varies. 
+                  Reply STOP to opt-out, HELP for help. 
+                  View our <a href="/privacy-policy" style="color: #ffffff; text-decoration: underline;">Privacy Policy</a>.
                 </p>
               </div>
 

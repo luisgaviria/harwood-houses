@@ -4,7 +4,7 @@
 
   const businessName = "Harwood Houses";
   const contactEmail = "contact@harwoodhouses.com";
-  const lastUpdated = "January 5, 2026"; // Updated to current date
+  const lastUpdated = "January 9, 2026"; 
 </script>
 
 <svelte:head>
@@ -32,9 +32,9 @@
         We collect information you voluntarily provide via our contact forms, applications, or email. This includes your <strong>name, email address, and phone number</strong>. 
       </p>
 
-      <h2>2. SMS Communications & Consent</h2>
+      <h2>2. SMS Program Description & Consent</h2>
       <p>
-        If you provide your phone number, you consent to receive SMS messages from {businessName} regarding your housing inquiry or application. 
+        When you provide your phone number via our contact form, you are providing express written consent to receive SMS messages from {businessName} regarding your housing inquiry, application status, or resident support. 
       </p>
       <ul style="margin-top: 1rem; list-style-type: disc; padding-left: 1.5rem;">
         <li><strong>Opt-In:</strong> By submitting a contact form, you agree to receive text messages.</li>
@@ -44,9 +44,12 @@
         <li><strong>Rates:</strong> Message and data rates may apply for any messages sent to you from us and to us from you.</li>
       </ul>
 
-      <h2>3. Data Sharing & Privacy for SMS</h2>
+      <h2>3. Third-Party Sharing Disclosure</h2>
       <p>
-        <strong>No mobile information will be shared with third parties/affiliates for marketing/promotional purposes.</strong> All the above categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.
+        <strong>No mobile information will be shared with third parties/affiliates for marketing/promotional purposes.</strong> All the above categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties. 
+      </p>
+      <p>
+        We do not sell, rent, or lease our contact lists to third parties.
       </p>
 
       <h2>4. How We Use Your Information</h2>
@@ -62,14 +65,13 @@
       <h2>6. Your Rights</h2>
       <p>
         To request access to or deletion of your information, please contact us at 
-        <a href="mailto:{contactEmail}" class="privacy-link">{contactEmail}</a>.
+        <a href="mailto:{contactEmail}" class="privacy-link" style="color: #1c792e; text-decoration: underline;">{contactEmail}</a>.
       </p>
     </div>
   </div>
 </section>
 
 <style>
-  /* Styles remain the same as your original */
   .banner { width: 100%; background-color: white; color: #151515; text-align: center; display: grid; place-items: center; padding-bottom: 2rem; }
   .banner-wrapper { display: block; position: relative; width: 100%; height: 0; padding: 0 0 calc(100% * 495 / 2048) 0; }
   .banner-wrapper img { position: absolute; width: 100%; height: 100%; top: 0; display: block; object-fit: cover; }
