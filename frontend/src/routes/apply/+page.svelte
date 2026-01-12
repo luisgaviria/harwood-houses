@@ -109,7 +109,7 @@
                   By providing your phone number, you agree to receive text messages from Harwood Houses. 
                   Message and data rates may apply. Message frequency varies. 
                   Reply STOP to opt-out, HELP for help. 
-                  View our <a href="/privacy-policy" style="color: #ffffff; text-decoration: underline;">Privacy Policy</a>.
+                  View our <a href="/privacy" style="color: #ffffff; text-decoration: underline;">Privacy Policy</a>.
                 </p>
               </div>
 
